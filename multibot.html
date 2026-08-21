@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Multibot | Gelişmiş Discord Botu</title>
-  <meta name="description" content="Multibot Discord botunu sunucunuza ekleyin. Moderasyon, yüksek kaliteli müzik sistemi, ekonomi ve eğlence komutları.">
-  
+  <meta name="description"
+    content="Multibot Discord botunu sunucunuza ekleyin. Moderasyon, yüksek kaliteli müzik sistemi, ekonomi ve eğlence komutları.">
+
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -34,12 +37,14 @@
   <!-- Subpage Hero -->
   <section class="subpage-hero">
     <div class="container">
-      <span class="subpage-badge" style="background: rgba(157, 78, 221, 0.08); border: 1px solid rgba(157, 78, 221, 0.15); color: var(--accent-purple);">
+      <span class="subpage-badge"
+        style="background: rgba(157, 78, 221, 0.08); border: 1px solid rgba(157, 78, 221, 0.15); color: var(--accent-purple);">
         <i class="fab fa-discord"></i> Slash Komutları Aktif
       </span>
       <h1 class="subpage-title">Multibot</h1>
       <p class="subpage-description">
-        Discord sunucunuzun tüm ihtiyaçlarını tek bir botla çözün. Gelişmiş koruma kalkanı, kesintisiz müzik ve etkileşimli oyun modülleri.
+        Discord sunucunuzun tüm ihtiyaçlarını tek bir botla çözün. Gelişmiş koruma kalkanı, kesintisiz müzik ve
+        etkileşimli oyun modülleri.
       </p>
     </div>
   </section>
@@ -47,20 +52,23 @@
   <!-- Add to Server Box -->
   <div class="container">
     <div class="glass-card download-box" style="border-color: rgba(207, 194, 178, 0.12);">
-      <i class="fab fa-discord fa-3x" style="color: var(--accent-purple); margin-bottom: 20px; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));"></i>
+      <i class="fab fa-discord fa-3x"
+        style="color: var(--accent-purple); margin-bottom: 20px; filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));"></i>
       <h2 style="margin-bottom: 12px;">Sunucunuza Davet Edin</h2>
       <p style="color: var(--text-secondary); max-width: 450px; margin: 0 auto 24px;">
         Botu sunucunuza eklemek için "Yönetici" veya "Sunucuyu Yönet" yetkisine sahip olmanız yeterlidir.
       </p>
-      
+
       <div class="download-options">
         <div class="download-btn-wrapper">
-          <a href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=8&scope=bot%20applications.commands" class="btn btn-primary" style="width: 100%; max-width: 320px;" id="invite-link-admin">
+          <a href="https://discord.com/api/oauth2/authorize?client_id=1216389829688950924&permissions=8&scope=bot%20applications.commands"
+            class="btn btn-primary" style="width: 100%; max-width: 320px;" id="invite-link-admin">
             <i class="fas fa-plus-circle"></i> Sunucuya Ekle (Yönetici)
           </a>
         </div>
         <div>
-          <a href="https://discord.com/api/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=2080374975&scope=bot%20applications.commands" class="btn btn-secondary" style="width: 100%; max-width: 320px;" id="invite-link-limited">
+          <a href="https://discord.com/api/oauth2/authorize?client_id=1216389829688950924&permissions=2080374975&scope=bot%20applications.commands"
+            class="btn btn-secondary" style="width: 100%; max-width: 320px;" id="invite-link-limited">
             <i class="fas fa-shield-alt"></i> Önerilen Yetkiler ile Ekle
           </a>
         </div>
@@ -101,22 +109,26 @@
               </tr>
               <tr>
                 <td class="command-name">/play &lt;şarkı&gt;</td>
-                <td><span class="project-tag" style="color: var(--accent-cyan); background: rgba(0, 242, 254, 0.05);">Müzik</span></td>
+                <td><span class="project-tag"
+                    style="color: var(--accent-cyan); background: rgba(0, 242, 254, 0.05);">Müzik</span></td>
                 <td>Belirtilen şarkıyı sesli kanalda çalar (YouTube, Spotify vb.)</td>
               </tr>
               <tr>
                 <td class="command-name">/ban &lt;üye&gt; [sebep]</td>
-                <td><span class="project-tag" style="color: var(--accent-purple); background: rgba(157, 78, 221, 0.05);">Yönetim</span></td>
+                <td><span class="project-tag"
+                    style="color: var(--accent-purple); background: rgba(157, 78, 221, 0.05);">Yönetim</span></td>
                 <td>Zararlı kullanıcıyı sunucudan uzaklaştırır.</td>
               </tr>
               <tr>
                 <td class="command-name">/mute &lt;üye&gt; &lt;süre&gt;</td>
-                <td><span class="project-tag" style="color: var(--accent-purple); background: rgba(157, 78, 221, 0.05);">Yönetim</span></td>
+                <td><span class="project-tag"
+                    style="color: var(--accent-purple); background: rgba(157, 78, 221, 0.05);">Yönetim</span></td>
                 <td>Kural ihlali yapan üyeyi geçici süreyle susturur.</td>
               </tr>
               <tr>
                 <td class="command-name">/temizle &lt;sayı&gt;</td>
-                <td><span class="project-tag" style="color: var(--accent-purple); background: rgba(157, 78, 221, 0.05);">Yönetim</span></td>
+                <td><span class="project-tag"
+                    style="color: var(--accent-purple); background: rgba(157, 78, 221, 0.05);">Yönetim</span></td>
                 <td>Kanalda belirtilen miktarda mesajı toplu siler.</td>
               </tr>
               <tr>
@@ -132,7 +144,8 @@
   </section>
 
   <!-- Detailed Features Grid -->
-  <section class="section" style="background: rgba(255, 255, 255, 0.01); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+  <section class="section"
+    style="background: rgba(255, 255, 255, 0.01); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Bot Özellikleri</span>
@@ -144,7 +157,8 @@
           <i class="fas fa-shield-virus fa-2x" style="color: var(--accent-purple); margin-bottom: 16px;"></i>
           <h3 style="margin-bottom: 12px;">Gelişmiş Koruma (Auto-Mod)</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Sunucunuzda link engelleme, spam koruması, küfür filtresi ve büyük harf engelleme gibi koruma modüllerini saniyeler içinde aktif edebilirsiniz.
+            Sunucunuzda link engelleme, spam koruması, küfür filtresi ve büyük harf engelleme gibi koruma modüllerini
+            saniyeler içinde aktif edebilirsiniz.
           </p>
         </div>
 
@@ -152,7 +166,8 @@
           <i class="fas fa-music fa-2x" style="color: var(--accent-purple); margin-bottom: 16px;"></i>
           <h3 style="margin-bottom: 12px;">Yüksek Kalite Müzik</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Gecikmesiz ses motoru sayesinde donma veya kasma yaşamadan, çalma listelerinizi kuyruğa alıp yüksek bit hızıyla müzik dinleyebilirsiniz.
+            Gecikmesiz ses motoru sayesinde donma veya kasma yaşamadan, çalma listelerinizi kuyruğa alıp yüksek bit
+            hızıyla müzik dinleyebilirsiniz.
           </p>
         </div>
 
@@ -160,7 +175,8 @@
           <i class="fas fa-cogs fa-2x" style="color: var(--accent-purple); margin-bottom: 16px;"></i>
           <h3 style="margin-bottom: 12px;">Kapsamlı Log Sistemi</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Sunucuda silinen mesajlar, düzenlenen mesajlar, katılan ve ayrılan üyeler gibi tüm hareketleri detaylı bir log kanalına anlık olarak raporlar.
+            Sunucuda silinen mesajlar, düzenlenen mesajlar, katılan ve ayrılan üyeler gibi tüm hareketleri detaylı bir
+            log kanalına anlık olarak raporlar.
           </p>
         </div>
       </div>
@@ -177,26 +193,32 @@
 
       <div style="display: grid; grid-template-cols: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
         <div class="glass-card" style="position: relative;">
-          <span style="font-size: 3rem; font-weight: 800; color: rgba(157, 78, 221, 0.1); position: absolute; top: 16px; right: 24px; line-height: 1;">01</span>
+          <span
+            style="font-size: 3rem; font-weight: 800; color: rgba(157, 78, 221, 0.1); position: absolute; top: 16px; right: 24px; line-height: 1;">01</span>
           <h3 style="margin-bottom: 12px; margin-top: 12px;">Sunucuya Davet Edin</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Yukarıdaki bağlantıyı kullanarak botu sunucunuza ekleyin ve gerekli temel izinleri (mesajları oku, mesaj gönder vb.) onaylayın.
+            Yukarıdaki bağlantıyı kullanarak botu sunucunuza ekleyin ve gerekli temel izinleri (mesajları oku, mesaj
+            gönder vb.) onaylayın.
           </p>
         </div>
 
         <div class="glass-card" style="position: relative;">
-          <span style="font-size: 3rem; font-weight: 800; color: rgba(157, 78, 221, 0.1); position: absolute; top: 16px; right: 24px; line-height: 1;">02</span>
+          <span
+            style="font-size: 3rem; font-weight: 800; color: rgba(157, 78, 221, 0.1); position: absolute; top: 16px; right: 24px; line-height: 1;">02</span>
           <h3 style="margin-bottom: 12px; margin-top: 12px;">Rol Sırasını Düzenleyin</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Discord sunucu ayarlarından "Multibot" rolünü, moderasyon yapmasını istediğiniz rollerin üstüne taşıyın (ban ve susturma yetkileri için önemlidir).
+            Discord sunucu ayarlarından "Multibot" rolünü, moderasyon yapmasını istediğiniz rollerin üstüne taşıyın (ban
+            ve susturma yetkileri için önemlidir).
           </p>
         </div>
 
         <div class="glass-card" style="position: relative;">
-          <span style="font-size: 3rem; font-weight: 800; color: rgba(157, 78, 221, 0.1); position: absolute; top: 16px; right: 24px; line-height: 1;">03</span>
+          <span
+            style="font-size: 3rem; font-weight: 800; color: rgba(157, 78, 221, 0.1); position: absolute; top: 16px; right: 24px; line-height: 1;">03</span>
           <h3 style="margin-bottom: 12px; margin-top: 12px;">Ayar Komutlarını Kullanın</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Kanallarınızın herhangi birinde `/kurulum` yazarak botun interaktif kurulum sihirbazını başlatın ve sistemi yapılandırın.
+            Kanallarınızın herhangi birinde `/kurulum` yazarak botun interaktif kurulum sihirbazını başlatın ve sistemi
+            yapılandırın.
           </p>
         </div>
       </div>
@@ -210,8 +232,10 @@
         &copy; 2026 Billy. Tüm Hakları Saklıdır.
       </div>
       <div class="footer-socials">
-        <a href="https://github.com/billygitpages" class="btn-icon" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://discord.gg/invite" class="btn-icon" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+        <a href="https://github.com/billygitpages" class="btn-icon" target="_blank" aria-label="GitHub"><i
+            class="fab fa-github"></i></a>
+        <a href="https://discord.gg/invite" class="btn-icon" target="_blank" aria-label="Discord"><i
+            class="fab fa-discord"></i></a>
       </div>
     </div>
   </footer>
@@ -219,4 +243,5 @@
   <!-- Custom Scripts -->
   <script src="main.js"></script>
 </body>
+
 </html>
