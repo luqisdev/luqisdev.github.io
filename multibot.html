@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mati | Kapsamlı Discord Botu</title>
-  <meta name="description"
-    content="Mati - Discord.js v14 ile geliştirilmiş, moderasyon, ekonomi, çekiliş, seviye sistemi ve daha fazlasını sunan kapsamlı Discord botu.">
+  <title>Mati | All-in-One Discord Bot</title>
+  <meta name="description" content="Mati - A powerful Discord.js v14 bot with moderation, economy, giveaways, leveling, ticket system and much more.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -20,116 +19,116 @@
         BILLY<span class="logo-dot"></span>
       </a>
       <ul class="nav-links" id="nav-menu">
-        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="lowbrowser.html">Lowbrowser</a></li>
         <li><a href="multibot.html" class="active">Mati</a></li>
       </ul>
-      <button class="mobile-menu-btn" aria-label="Menüyü Aç" id="menu-toggle">
+      <button class="mobile-menu-btn" aria-label="Open menu" id="menu-toggle">
         <i class="fas fa-bars"></i>
       </button>
     </div>
   </header>
 
-  <!-- Subpage Hero -->
+  <!-- Hero -->
   <section class="subpage-hero">
     <div class="container">
       <h1 class="subpage-title">Mati</h1>
       <p class="subpage-description">
-        Discord.js v14 ile geliştirilmiş, çok sunuculu mimariye sahip, moderasyondan ekonomiye, çekilişten ticket sistemine kadar her şeyi barındıran kapsamlı bir Discord botu.
+        Built with Discord.js v14, multi-server architecture. From moderation to economy, giveaways to ticket systems — Mati does it all.
       </p>
       <div style="margin-top: 32px;">
         <a href="https://discord.com/api/oauth2/authorize?client_id=1216389829688950924&permissions=8&scope=bot%20applications.commands"
           class="btn btn-primary" id="invite-link-admin">
-          <i class="fas fa-plus-circle"></i> Sunucuya Ekle (Yönetici)
+          <i class="fas fa-plus-circle"></i> Add to Server (Admin)
         </a>
         &nbsp;&nbsp;
         <a href="https://discord.com/api/oauth2/authorize?client_id=1216389829688950924&permissions=2080374975&scope=bot%20applications.commands"
           class="btn btn-secondary" id="invite-link-limited">
-          <i class="fas fa-shield-alt"></i> Önerilen Yetkiler ile Ekle
+          <i class="fas fa-shield-alt"></i> Add with Recommended Permissions
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Sistem Tablosu -->
+  <!-- Features -->
   <section class="section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Sistemler</span>
-        <h2 class="section-title">Neler Sunuyor?</h2>
+        <span class="section-tag">Systems</span>
+        <h2 class="section-title">What Does Mati Offer?</h2>
       </div>
 
       <div class="features-grid">
 
         <div class="glass-card">
           <i class="fas fa-shield-virus fa-2x" style="color: #84A98C; margin-bottom: 16px;"></i>
-          <h3 style="margin-bottom: 12px;">Moderasyon & Koruma</h3>
+          <h3 style="margin-bottom: 12px;">Moderation & Protection</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Ban, Unban, Kick, Timeout, Uyarı sistemi, Toplu mesaj silme, Kanal kilitleme, Yavaş mod, Nuke, ModLog ve Anti-Link, Anti-Spam, Anti-Caps, Anti-Küfür koruma modülleri.
+            Ban, Unban, Kick, Timeout, Warning system, Bulk message delete, Channel lock, Slow mode, Nuke, ModLog, Anti-Link, Anti-Spam, Anti-Caps, Anti-Swear.
           </p>
         </div>
 
         <div class="glass-card">
           <i class="fas fa-coins fa-2x" style="color: #EAE2B7; margin-bottom: 16px;"></i>
-          <h3 style="margin-bottom: 12px;">Ekonomi & Kumar</h3>
+          <h3 style="margin-bottom: 12px;">Economy & Gambling</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Bakiye, Günlük ödül, Çalışma, Soygun, Para gönderme, Banka, Market, Envanter, Zenginler sıralaması, Slot makinesi, Yazı-tura ve butonlu Blackjack (21).
+            Balance, Daily reward, Work, Heist, Transfer money, Bank, Shop, Inventory, Leaderboard, Slot machine, Coin flip and interactive Blackjack (21).
           </p>
         </div>
 
         <div class="glass-card">
           <i class="fas fa-star fa-2x" style="color: #84A98C; margin-bottom: 16px;"></i>
-          <h3 style="margin-bottom: 12px;">Seviye & XP Sistemi</h3>
+          <h3 style="margin-bottom: 12px;">Level & XP System</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Mesaj ve ses aktivitelerinden XP kazanımı, Seviye kartı, İlerleme çubuğu, Sunucu liderlik tablosu, Seviye atlama log kanalı ve Seviye rol ödülleri.
+            XP from messages and voice activity, level card, progress bar, server leaderboard, level-up log channel and level role rewards.
           </p>
         </div>
 
         <div class="glass-card">
           <i class="fas fa-ticket-alt fa-2x" style="color: #EAE2B7; margin-bottom: 16px;"></i>
-          <h3 style="margin-bottom: 12px;">Destek Ticket Sistemi</h3>
+          <h3 style="margin-bottom: 12px;">Support Ticket System</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Butonlu profesyonel destek paneli, otomatik özel kanal oluşturma, talebi kapatma, üstlenme (Claim), TXT transkript alma ve kanal silme kontrolleri.
+            Button-based ticket panel, automatic private channel creation, close, claim, TXT transcript export and channel deletion controls.
           </p>
         </div>
 
         <div class="glass-card">
           <i class="fas fa-gift fa-2x" style="color: #84A98C; margin-bottom: 16px;"></i>
-          <h3 style="margin-bottom: 12px;">Çekiliş Sistemi</h3>
+          <h3 style="margin-bottom: 12px;">Giveaway System</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Zaman ayarlı geri sayım, butonlu katılım sistemi, otomatik kazanan seçme, çekiliş bitirme, reroll (yeniden seçme) ve aktif çekiliş listesi.
+            Timed countdown, button-based entry, automatic winner selection, end giveaway, reroll and active giveaway list.
           </p>
         </div>
 
         <div class="glass-card">
           <i class="fas fa-headset fa-2x" style="color: #EAE2B7; margin-bottom: 16px;"></i>
-          <h3 style="margin-bottom: 12px;">Geçici Özel Ses Odaları</h3>
+          <h3 style="margin-bottom: 12px;">Temporary Voice Rooms</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            "Oda Oluştur" kanalına girene özel ses odası açar, butonlu panel (Kilitle, Gizle, Limit, İsim) verir ve oda boşalınca otomatik siler.
+            Joining a "Create Room" channel opens a private voice room. Gives a control panel (Lock, Hide, Limit, Rename). Auto-deletes when empty.
           </p>
         </div>
 
         <div class="glass-card">
           <i class="fas fa-save fa-2x" style="color: #84A98C; margin-bottom: 16px;"></i>
-          <h3 style="margin-bottom: 12px;">Sunucu Yedekleme</h3>
+          <h3 style="margin-bottom: 12px;">Server Backup</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Sunucunun tüm kanal, kategori ve rol şablonunu tek tıkla yedekler ve geri yükler. Yedek listesi ve detay görüntüleme desteği.
+            Backs up all channels, categories and roles with one command and restores them on demand. Includes backup list and detail view.
           </p>
         </div>
 
         <div class="glass-card">
           <i class="fas fa-gamepad fa-2x" style="color: #EAE2B7; margin-bottom: 16px;"></i>
-          <h3 style="margin-bottom: 12px;">Eğlence & Mini Oyunlar</h3>
+          <h3 style="margin-bottom: 12px;">Fun & Mini Games</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Butonlu XOX (Tic-Tac-Toe), Mayın Tarlası, Sayı Tahmin, Sayı Sayma Oyunu, Kelime Türetmece, Aşk ölçer, Sihirli 8-top ve daha fazlası.
+            Button-based Tic-Tac-Toe, Minesweeper, Number Guess, Word Chain, Love meter, Magic 8-ball and more.
           </p>
         </div>
 
         <div class="glass-card">
           <i class="fas fa-cogs fa-2x" style="color: #84A98C; margin-bottom: 16px;"></i>
-          <h3 style="margin-bottom: 12px;">Sunucu Kurulum Araçları</h3>
+          <h3 style="margin-bottom: 12px;">Server Setup Tools</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Özel Hoş Geldin & Çıkış mesajı, Üye & Bot Otorolü, Hedef sayaç kanalı, Butonlu rol alma menüsü, Kapsamlı denetim logları ve Davet takip sistemi.
+            Custom welcome & leave messages, auto-role on join, member counter channels, button role menus, full audit logs and invite tracker.
           </p>
         </div>
 
@@ -137,83 +136,83 @@
     </div>
   </section>
 
-  <!-- Komut Tablosu -->
+  <!-- Commands -->
   <section class="section" style="border-top: 1px solid var(--card-border);">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Komutlar</span>
-        <h2 class="section-title">Slash (/) Komutları</h2>
+        <span class="section-tag">Commands</span>
+        <h2 class="section-title">Slash (/) Commands</h2>
       </div>
 
       <div class="glass-card">
         <table class="command-table">
           <thead>
             <tr>
-              <th>Komut</th>
-              <th>Kategori</th>
-              <th>Açıklama</th>
+              <th>Command</th>
+              <th>Category</th>
+              <th>Description</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="command-name">/ban &lt;kullanıcı&gt;</td>
-              <td><span class="project-tag">Moderasyon</span></td>
-              <td>Kullanıcıyı sunucudan yasaklar.</td>
+              <td>/ban &lt;user&gt;</td>
+              <td><span class="project-tag">Moderation</span></td>
+              <td>Bans a user from the server.</td>
             </tr>
             <tr>
-              <td class="command-name">/timeout &lt;kullanıcı&gt;</td>
-              <td><span class="project-tag">Moderasyon</span></td>
-              <td>Kullanıcıyı belirtilen süre susturur.</td>
+              <td>/timeout &lt;user&gt;</td>
+              <td><span class="project-tag">Moderation</span></td>
+              <td>Mutes a user for a specified duration.</td>
             </tr>
             <tr>
-              <td class="command-name">/sil &lt;miktar&gt;</td>
-              <td><span class="project-tag">Moderasyon</span></td>
-              <td>Toplu mesaj siler.</td>
+              <td>/purge &lt;amount&gt;</td>
+              <td><span class="project-tag">Moderation</span></td>
+              <td>Bulk deletes messages.</td>
             </tr>
             <tr>
-              <td class="command-name">/uyar &lt;kullanıcı&gt;</td>
-              <td><span class="project-tag">Moderasyon</span></td>
-              <td>Kullanıcıya uyarı verir, geçmişini tutar.</td>
+              <td>/warn &lt;user&gt;</td>
+              <td><span class="project-tag">Moderation</span></td>
+              <td>Issues a warning and logs it.</td>
             </tr>
             <tr>
-              <td class="command-name">/cekilis-baslat</td>
-              <td><span class="project-tag">Çekiliş</span></td>
-              <td>Zaman ayarlı butonlu çekiliş başlatır.</td>
+              <td>/giveaway-start</td>
+              <td><span class="project-tag">Giveaway</span></td>
+              <td>Starts a timed button-based giveaway.</td>
             </tr>
             <tr>
-              <td class="command-name">/seviye</td>
-              <td><span class="project-tag">Seviye</span></td>
-              <td>Kendi seviye kartınızı görüntüler.</td>
+              <td>/level</td>
+              <td><span class="project-tag">Level</span></td>
+              <td>Displays your current level card.</td>
             </tr>
             <tr>
-              <td class="command-name">/seviye-siralamasi</td>
-              <td><span class="project-tag">Seviye</span></td>
-              <td>Sunucu XP liderlik tablosunu gösterir.</td>
+              <td>/leaderboard</td>
+              <td><span class="project-tag">Level</span></td>
+              <td>Shows the server XP leaderboard.</td>
             </tr>
             <tr>
-              <td class="command-name">/yedek-al</td>
-              <td><span class="project-tag">Kurulum</span></td>
-              <td>Sunucunun tüm yapısını yedekler.</td>
+              <td>/backup-create</td>
+              <td><span class="project-tag">Setup</span></td>
+              <td>Backs up the entire server structure.</td>
             </tr>
             <tr>
-              <td class="command-name">/gecici-oda-kur</td>
-              <td><span class="project-tag">Kurulum</span></td>
-              <td>Geçici özel ses odası sistemini kurar.</td>
+              <td>/tempvoice-setup</td>
+              <td><span class="project-tag">Setup</span></td>
+              <td>Sets up the temporary voice room system.</td>
             </tr>
             <tr>
-              <td class="command-name">/ticket-kur</td>
+              <td>/ticket-setup</td>
               <td><span class="project-tag">Ticket</span></td>
-              <td>Destek ticket sistemini ve panelini kurar.</td>
+              <td>Creates the support ticket panel.</td>
             </tr>
             <tr>
-              <td class="command-name">/guvenlik</td>
-              <td><span class="project-tag">Koruma</span></td>
-              <td>Anti-raid, anti-spam ve kanal/rol koruma sistemlerini yönetir.</td>
+              <td>/security</td>
+              <td><span class="project-tag">Protection</span></td>
+              <td>Manages anti-raid, anti-spam and channel/role protection.</td>
             </tr>
             <tr>
-              <td class="command-name">/xox &lt;rakip&gt;</td>
-              <td><span class="project-tag">Eğlence</span></td>
-              <td>İki kişilik butonlu XOX oyunu başlatır.</td>
+              <td>/tictactoe &lt;opponent&gt;</td>
+              <td><span class="project-tag">Fun</span></td>
+              <td>Starts a two-player button Tic-Tac-Toe game.</td>
             </tr>
           </tbody>
         </table>
@@ -221,36 +220,36 @@
     </div>
   </section>
 
-  <!-- Kurulum Adımları -->
+  <!-- Setup Steps -->
   <section class="section" style="border-top: 1px solid var(--card-border);">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Başlarken</span>
-        <h2 class="section-title">Nasıl Kurulur?</h2>
+        <span class="section-tag">Getting Started</span>
+        <h2 class="section-title">How to Set Up</h2>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
         <div class="glass-card" style="position: relative;">
           <span style="font-size: 3rem; font-weight: 800; color: rgba(132, 169, 140, 0.12); position: absolute; top: 16px; right: 24px; line-height: 1; font-family: 'Lora', serif;">01</span>
-          <h3 style="margin-bottom: 12px; margin-top: 12px;">Sunucuya Davet Edin</h3>
+          <h3 style="margin-bottom: 12px; margin-top: 12px;">Invite Mati</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Yukarıdaki bağlantıyı kullanarak Mati'yi sunucunuza ekleyin ve gerekli izinleri onaylayın.
+            Use the invite button above to add Mati to your server and approve the required permissions.
           </p>
         </div>
 
         <div class="glass-card" style="position: relative;">
           <span style="font-size: 3rem; font-weight: 800; color: rgba(132, 169, 140, 0.12); position: absolute; top: 16px; right: 24px; line-height: 1; font-family: 'Lora', serif;">02</span>
-          <h3 style="margin-bottom: 12px; margin-top: 12px;">Rol Sırasını Düzenleyin</h3>
+          <h3 style="margin-bottom: 12px; margin-top: 12px;">Adjust Role Order</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Discord sunucu ayarlarından "Mati" rolünü, moderasyon yapmasını istediğiniz rollerin üstüne taşıyın.
+            In your server settings, drag the "Mati" role above the roles you want it to moderate.
           </p>
         </div>
 
         <div class="glass-card" style="position: relative;">
           <span style="font-size: 3rem; font-weight: 800; color: rgba(132, 169, 140, 0.12); position: absolute; top: 16px; right: 24px; line-height: 1; font-family: 'Lora', serif;">03</span>
-          <h3 style="margin-bottom: 12px; margin-top: 12px;">Sistemleri Kurun</h3>
+          <h3 style="margin-bottom: 12px; margin-top: 12px;">Configure Systems</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Kullanmak istediğiniz sistemleri /gecici-oda-kur, /ticket-kur, /hosgeldin-ayarla gibi komutlarla ayarlayın.
+            Run /tempvoice-setup, /ticket-setup, /welcome-set and other setup commands to configure the features you need.
           </p>
         </div>
       </div>
@@ -261,7 +260,7 @@
   <footer>
     <div class="container footer-container">
       <div class="footer-copy">
-        &copy; 2026 Billy. Tüm Hakları Saklıdır.
+        &copy; 2026 Billy. All rights reserved.
       </div>
       <div class="footer-socials">
         <a href="https://github.com/billythestudent" class="btn-icon" target="_blank" aria-label="GitHub">

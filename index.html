@@ -1,17 +1,12 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Billy Portfolio | Lowbrowser & Mati</title>
-  <meta name="description"
-    content="Kişisel portfolyo sitesi. Ultra hafif web tarayıcısı Lowbrowser ve kapsamlı Discord botu Mati projelerini keşfedin.">
-
-  <!-- Font Awesome Icons -->
+  <title>Billy | Developer Portfolio</title>
+  <meta name="description" content="Billy's personal portfolio. Explore Lowbrowser - an ultra-lightweight web browser, and Mati - a powerful all-in-one Discord bot.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -24,11 +19,11 @@
         BILLY<span class="logo-dot"></span>
       </a>
       <ul class="nav-links" id="nav-menu">
-        <li><a href="index.html" class="active">Ana Sayfa</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
         <li><a href="lowbrowser.html">Lowbrowser</a></li>
         <li><a href="multibot.html">Mati</a></li>
       </ul>
-      <button class="mobile-menu-btn" aria-label="Menüyü Aç" id="menu-toggle">
+      <button class="mobile-menu-btn" aria-label="Open menu" id="menu-toggle">
         <i class="fas fa-bars"></i>
       </button>
     </div>
@@ -40,20 +35,20 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="ping"></span>
-          Yeni Projeler Aktif
+          New Projects Active
         </div>
-        <h1 class="hero-title">Geleceği Tasarlayan <span>Kodlar</span></h1>
+        <h1 class="hero-title">Building the <span>Future</span> with Code</h1>
         <p class="hero-subtitle">
-          Ben Billy. Modern web teknolojileri, tarayıcı motorları ve Discord API entegrasyonları üzerinde çalışıyorum.
-          Şu anda aktif olarak <span class="typing-effect"
-            data-texts='["Lowbrowser web tarayıcısını geliştiriyorum.", "Mati Discord botunu kodluyorum.", "Açık kaynak projeler üretiyorum."]'></span>
+          Hey, I'm Billy. I work on modern web technologies, browser engines and Discord API integrations.
+          Currently working on <span class="typing-effect"
+            data-texts='["Lowbrowser — a lightweight web browser.", "Mati — a powerful Discord bot.", "Open source projects."]'></span>
         </p>
         <div class="hero-buttons">
           <a href="lowbrowser.html" class="btn btn-primary" id="hero-btn-lowbrowser">
-            <i class="fas fa-download"></i> Lowbrowser İndir
+            <i class="fas fa-download"></i> Download Lowbrowser
           </a>
           <a href="multibot.html" class="btn btn-secondary" id="hero-btn-mati">
-            <i class="fab fa-discord"></i> Mati'yi Keşfet
+            <i class="fab fa-discord"></i> Explore Mati
           </a>
         </div>
       </div>
@@ -63,38 +58,35 @@
     </div>
   </section>
 
-  <!-- Stats Section -->
-
   <!-- Featured Projects -->
   <section class="section" id="projects">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Amiral Gemisi Projeler</span>
-        <h2 class="section-title">Neler Geliştirdim?</h2>
-        <p class="section-subtitle">Kullanıcı deneyimini artıran, performans odaklı ve açık kaynaklı projelerim.</p>
+        <span class="section-tag">Flagship Projects</span>
+        <h2 class="section-title">What I've Built</h2>
+        <p class="section-subtitle">Performance-focused, open-source projects built to improve the user experience.</p>
       </div>
 
       <div class="projects-grid">
         <!-- Lowbrowser -->
         <div class="glass-card project-card">
           <div class="project-meta">
-            <span class="project-tag lowbrowser">Web Tarayıcısı</span>
-            <i class="fas fa-globe-americas fa-lg" style="color: var(--accent-cyan);"></i>
+            <span class="project-tag lowbrowser">Web Browser</span>
+            <i class="fas fa-globe-americas fa-lg" style="color: var(--accent-color);"></i>
           </div>
           <h3>Lowbrowser</h3>
           <p class="project-description">
-            Sistem kaynaklarını minimum düzeyde kullanan, yüksek gizlilik standartlarına sahip ve tamamen
-            özelleştirilebilir Chromium tabanlı hafif bir web tarayıcısı.
+            A Chromium-based browser with minimal system footprint, high privacy standards and full customization support.
           </p>
           <ul class="project-features">
-            <li>Düşük RAM ve CPU kullanımı</li>
-            <li>Dahili reklam ve izleyici engelleme</li>
-            <li>Kişiselleştirilebilir şık arayüz temaları</li>
-            <li>Hızlı başlangıç ve sayfa yükleme motoru</li>
+            <li>Low RAM & CPU usage</li>
+            <li>Built-in ad & tracker blocking</li>
+            <li>Customizable clean themes</li>
+            <li>Fast launch & page load engine</li>
           </ul>
           <div class="project-links">
             <a href="lowbrowser.html" class="btn btn-primary btn-sm">
-              <i class="fas fa-download"></i> İndir & Dene
+              <i class="fas fa-download"></i> Download & Try
             </a>
           </div>
         </div>
@@ -102,23 +94,22 @@
         <!-- Mati -->
         <div class="glass-card project-card">
           <div class="project-meta">
-            <span class="project-tag multibot">Discord Botu</span>
-            <i class="fab fa-discord fa-lg" style="color: var(--accent-purple);"></i>
+            <span class="project-tag multibot">Discord Bot</span>
+            <i class="fab fa-discord fa-lg" style="color: var(--accent-color);"></i>
           </div>
           <h3>Mati</h3>
           <p class="project-description">
-            Moderasyon, ekonomi, çekiliş, seviye, ticket ve daha onlarca sistemle donatılmış
-            kapsamlı Discord.js v14 botu.
+            A feature-rich Discord.js v14 bot packed with moderation, economy, giveaways, leveling, ticket system and dozens more.
           </p>
           <ul class="project-features">
-            <li>Gelişmiş Auto-Mod ve yönetim sistemi</li>
-            <li>Ekonomi, kumar ve seviye sistemi</li>
-            <li>Çekiliş ve ticket sistemleri</li>
-            <li>Slash (/) komut desteği ile kolay kurulum</li>
+            <li>Advanced auto-mod & management</li>
+            <li>Economy, gambling & level system</li>
+            <li>Giveaway & ticket systems</li>
+            <li>Easy setup with slash commands</li>
           </ul>
           <div class="project-links">
             <a href="multibot.html" class="btn btn-primary btn-sm">
-              <i class="fas fa-plus"></i> Sunucuya Ekle
+              <i class="fas fa-plus"></i> Add to Server
             </a>
           </div>
         </div>
@@ -130,14 +121,14 @@
   <section class="section" id="skills">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Teknoloji Yığını</span>
-        <h2 class="section-title">Yeteneklerim</h2>
-        <p class="section-subtitle">Projelerimde aktif olarak kullandığım diller, araçlar ve kütüphaneler.</p>
+        <span class="section-tag">Tech Stack</span>
+        <h2 class="section-title">My Skills</h2>
+        <p class="section-subtitle">Languages, tools and libraries I actively use in my projects.</p>
       </div>
 
       <div class="skills-grid">
         <div class="glass-card skill-category">
-          <h3><span class="indicator"></span> Programlama Dilleri</h3>
+          <h3><span class="indicator"></span> Languages</h3>
           <div class="skill-items">
             <span class="skill-tag">HTML5 / CSS3</span>
             <span class="skill-tag">JavaScript (ES6+)</span>
@@ -148,7 +139,7 @@
         </div>
 
         <div class="glass-card skill-category">
-          <h3><span class="indicator"></span> Araçlar & Kütüphaneler</h3>
+          <h3><span class="indicator"></span> Tools & Libraries</h3>
           <div class="skill-items">
             <span class="skill-tag">Git / GitHub</span>
             <span class="skill-tag">Discord.js</span>
@@ -165,9 +156,9 @@
   <section class="section" id="contact">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Bağlantı Kur</span>
-        <h2 class="section-title">Bana Ulaşın</h2>
-        <p class="section-subtitle">Benimle ortak projeler geliştirmek veya bilgi almak için iletişime geçebilirsiniz.</p>
+        <span class="section-tag">Get in Touch</span>
+        <h2 class="section-title">Contact Me</h2>
+        <p class="section-subtitle">Feel free to reach out for collaboration or any questions.</p>
       </div>
 
       <div class="glass-card contact-grid">
@@ -177,7 +168,7 @@
               <i class="fas fa-envelope"></i>
             </div>
             <div class="contact-details">
-              <h4>E-posta</h4>
+              <h4>Email</h4>
               <p>contact@billygitpages.github.io</p>
             </div>
           </div>
@@ -203,11 +194,10 @@
 
         <div class="contact-form-placeholder"
           style="display: flex; flex-direction: column; justify-content: center; align-items: center; border-left: 1px solid var(--card-border); padding-left: 48px;">
-          <i class="fas fa-paper-plane fa-3x"
-            style="color: var(--accent-color); margin-bottom: 20px;"></i>
-          <h3 style="margin-bottom: 12px; font-size: 1.5rem;">Sosyal Medyadan Yazın</h3>
+          <i class="fas fa-paper-plane fa-3x" style="color: var(--accent-color); margin-bottom: 20px;"></i>
+          <h3 style="margin-bottom: 12px; font-size: 1.5rem;">Reach Out on Social</h3>
           <p style="color: var(--text-secondary); text-align: center; font-size: 0.95rem;">
-            En hızlı dönüşü Discord ve GitHub üzerinden sağlıyorum. Profil butonlarından hemen bağlantı kurabilirsiniz!
+            I respond fastest on Discord and GitHub. Use the profile links below to connect!
           </p>
         </div>
       </div>
@@ -218,7 +208,7 @@
   <footer>
     <div class="container footer-container">
       <div class="footer-copy">
-        &copy; 2026 Billy. Tüm Hakları Saklıdır.
+        &copy; 2026 Billy. All rights reserved.
       </div>
       <div class="footer-socials">
         <a href="https://github.com/billythestudent" class="btn-icon" target="_blank" aria-label="GitHub">
@@ -231,7 +221,6 @@
     </div>
   </footer>
 
-  <!-- Custom Scripts -->
   <script src="main.js"></script>
 </body>
 

@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lowbrowser Ä°ndir | Ultra Hafif Web TarayÄ±cÄ±sÄ±</title>
-  <meta name="description" content="Lowbrowser web tarayÄ±cÄ±sÄ±nÄ± indirin. Minimum RAM ve CPU kullanÄ±mÄ±yla Chromium tabanlÄ±, hÄ±zlÄ±, reklam engelleme Ã¶zellikli tarayÄ±cÄ±.">
-  
-  <!-- Font Awesome Icons -->
+  <title>Lowbrowser | Ultra Lightweight Web Browser</title>
+  <meta name="description" content="Download Lowbrowser - A fast, privacy-focused, Chromium-based browser with minimal RAM and CPU usage, built-in ad blocking and a clean interface.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -21,63 +19,60 @@
         BILLY<span class="logo-dot"></span>
       </a>
       <ul class="nav-links" id="nav-menu">
-        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="lowbrowser.html" class="active">Lowbrowser</a></li>
         <li><a href="multibot.html">Mati</a></li>
       </ul>
-      <button class="mobile-menu-btn" aria-label="Menüyü Aç" id="menu-toggle">
+      <button class="mobile-menu-btn" aria-label="Open menu" id="menu-toggle">
         <i class="fas fa-bars"></i>
       </button>
     </div>
   </header>
 
-  <!-- Subpage Hero -->
+  <!-- Hero -->
   <section class="subpage-hero">
     <div class="container">
-      <span class="subpage-badge" style="background: rgba(0, 242, 254, 0.08); border: 1px solid rgba(0, 242, 254, 0.15); color: var(--accent-cyan);">
-        <i class="fas fa-rocket"></i> Versiyon 1.2.0 Stabil Ã‡Ä±ktÄ±
-      </span>
       <h1 class="subpage-title">Lowbrowser</h1>
       <p class="subpage-description">
-        BilgisayarÄ±nÄ±zÄ± yormayan, sistem kaynaklarÄ±nÄ± minimum seviyede kullanan, dahili reklam engelleyicili ultra hafif yeni nesil web tarayÄ±cÄ±sÄ±.
+        A next-generation, Chromium-based web browser that respects your system resources. Minimal RAM usage, built-in ad blocking, and a clean, distraction-free interface.
       </p>
     </div>
   </section>
 
-  <!-- Download Action Box -->
+  <!-- Download Section -->
   <div class="container">
-    <div class="glass-card download-box">
-      <i class="fas fa-cloud-download-alt fa-3x" style="color: var(--accent-cyan); margin-bottom: 20px;"></i>
-      <h2 style="margin-bottom: 12px;">TarayÄ±cÄ±yÄ± Ä°ndirin</h2>
-      <p style="color: var(--text-secondary);">Windows 10 / 11 (64-bit) iÅŸletim sistemleriyle tam uyumludur.</p>
-      
-      <div class="download-options">
-        <div class="download-btn-wrapper">
-          <a href="https://github.com/billygitpages/lowbrowser/releases/latest/download/Lowbrowser_Setup.exe" class="btn btn-primary" style="width: 100%; max-width: 320px;" id="download-exe-link">
-            <i class="fab fa-windows"></i> Windows iÃ§in Ä°ndir (.exe)
-          </a>
-        </div>
-        <div>
-          <a href="https://github.com/billygitpages/lowbrowser/archive/refs/heads/main.zip" class="btn btn-secondary" style="width: 100%; max-width: 320px;" id="download-zip-link">
-            <i class="fas fa-file-archive"></i> TaÅŸÄ±nabilir SÃ¼rÃ¼m (.zip)
-          </a>
-        </div>
+    <div class="glass-card" style="max-width: 700px; margin: 0 auto 48px;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+        <i class="fas fa-download fa-2x" style="color: var(--btn-primary-bg);"></i>
+        <h2 style="font-size: 1.6rem;">Download Lowbrowser</h2>
       </div>
-      <p class="download-info-small">Dosya Boyutu: ~45 MB | Kurulumsuz (Portable) seÃ§eneÄŸi mevcuttur.</p>
+      <p style="color: var(--text-secondary); margin-bottom: 24px;">
+        Compatible with Windows 10 / 11 (64-bit).
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 12px; max-width: 320px;">
+        <a href="#" class="btn btn-primary" id="download-exe" style="justify-content: flex-start; gap: 12px;">
+          <i class="fab fa-windows"></i> Download for Windows (.exe)
+        </a>
+        <a href="#" class="btn btn-secondary" id="download-zip" style="justify-content: flex-start; gap: 12px;">
+          <i class="fas fa-file-archive"></i> Portable Version (.zip)
+        </a>
+      </div>
+      <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 16px;">
+        File Size: ~45 MB &nbsp;|&nbsp; Portable (no install) option available.
+      </p>
     </div>
   </div>
 
-  <!-- Browser Visual Mockup -->
+  <!-- Browser Mockup -->
   <section class="section" style="padding-top: 0;">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">ArayÃ¼z Ã–nizlemesi</span>
-        <h2>TasarÄ±m ve Performans</h2>
+        <span class="section-tag">Preview</span>
+        <h2>Interface & Performance</h2>
       </div>
 
       <div class="browser-mockup">
         <div class="browser-header" style="display: flex; align-items: center; gap: 12px;">
-          <!-- DÃ¼zgÃ¼n gÃ¶sterilen noktalar -->
           <span style="width:12px;height:12px;border-radius:50%;background:#6e8477;display:inline-block;"></span>
           <span style="width:12px;height:12px;border-radius:50%;background:#a49685;display:inline-block;"></span>
           <span style="width:12px;height:12px;border-radius:50%;background:#486e56;display:inline-block;"></span>
@@ -88,20 +83,19 @@
         <div class="browser-content" style="background: #1A2A20; min-height: 300px; display:flex; align-items:center; justify-content:center;">
           <div class="browser-preview-ui">
             <div style="font-family: 'Lora', serif; font-size: 2rem; font-weight: 700; color: #F0F5F2; margin-bottom: 12px;">Lowbrowser</div>
-            <p style="color: #B0C4B7; margin-bottom: 28px; font-size: 1rem;">GÃ¶z alÄ±cÄ± hÄ±z, minimalist tasarÄ±m.</p>
-            
+            <p style="color: #B0C4B7; margin-bottom: 28px; font-size: 1rem;">Blazing fast. Beautifully minimal.</p>
             <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
               <div style="background: #2C4736; padding: 16px 24px; border-radius: 6px; border: 1px solid #446852; min-width: 140px;">
-                <div style="color: #EAE2B7; font-size: 1.5rem; font-weight: 700; margin-bottom: 4px;">0.12sn</div>
-                <p style="font-size: 0.8rem; color: #84A98C;">AÃ§Ä±lÄ±ÅŸ HÄ±zÄ±</p>
+                <div style="color: #EAE2B7; font-size: 1.5rem; font-weight: 700; margin-bottom: 4px;">0.12s</div>
+                <p style="font-size: 0.8rem; color: #84A98C;">Launch Speed</p>
               </div>
               <div style="background: #2C4736; padding: 16px 24px; border-radius: 6px; border: 1px solid #446852; min-width: 140px;">
                 <div style="color: #EAE2B7; font-size: 1.5rem; font-weight: 700; margin-bottom: 4px;">62%</div>
-                <p style="font-size: 0.8rem; color: #84A98C;">DÃ¼ÅŸÃ¼k RAM</p>
+                <p style="font-size: 0.8rem; color: #84A98C;">Less RAM</p>
               </div>
               <div style="background: #2C4736; padding: 16px 24px; border-radius: 6px; border: 1px solid #446852; min-width: 140px;">
                 <div style="color: #EAE2B7; font-size: 1.5rem; font-weight: 700; margin-bottom: 4px;">2,450+</div>
-                <p style="font-size: 0.8rem; color: #84A98C;">Engellenen Reklam</p>
+                <p style="font-size: 0.8rem; color: #84A98C;">Ads Blocked</p>
               </div>
             </div>
           </div>
@@ -110,77 +104,61 @@
     </div>
   </section>
 
-  <!-- Detailed Features Grid -->
-  <section class="section" style="background: rgba(255, 255, 255, 0.01); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+  <!-- Features Grid -->
+  <section class="section" style="border-top: 1px solid var(--card-border);">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Teknik Ã–zellikler</span>
-        <h2>Neden Lowbrowser?</h2>
+        <span class="section-tag">Why Lowbrowser?</span>
+        <h2>Key Features</h2>
       </div>
 
       <div class="features-grid">
         <div class="glass-card">
-          <i class="fas fa-bolt fa-2x" style="color: var(--accent-cyan); margin-bottom: 16px;"></i>
-          <h3 style="margin-bottom: 12px;">Ultra HÄ±zlÄ± BaÅŸlangÄ±Ã§</h3>
+          <i class="fas fa-bolt fa-2x" style="color: #EAE2B7; margin-bottom: 16px;"></i>
+          <h3 style="margin-bottom: 12px;">Ultra Fast Startup</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Gereksiz eklentiler ve arka plan iÅŸlemleri barÄ±ndÄ±rmaz. TÄ±kladÄ±ÄŸÄ±nÄ±z an aÃ§Ä±lÄ±r ve saniyeler iÃ§inde sÃ¶rf yapmaya hazÄ±r hale gelir.
+            No bloated extensions or background processes. Launches in milliseconds and stays out of your way.
           </p>
         </div>
 
         <div class="glass-card">
-          <i class="fas fa-shield-alt fa-2x" style="color: var(--accent-cyan); margin-bottom: 16px;"></i>
-          <h3 style="margin-bottom: 12px;">Dahili AdBlocker</h3>
+          <i class="fas fa-memory fa-2x" style="color: #84A98C; margin-bottom: 16px;"></i>
+          <h3 style="margin-bottom: 12px;">Low Memory Footprint</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Web sayfalarÄ±ndaki reklamlarÄ±, Ã§erez onay pencerelerini ve takip piksellerini otomatik olarak temizleyerek kotanÄ±zÄ± ve vaktinizi korur.
+            Uses up to 62% less RAM than standard Chromium-based browsers. Perfect for older or lower-end machines.
           </p>
         </div>
 
         <div class="glass-card">
-          <i class="fas fa-microchip fa-2x" style="color: var(--accent-cyan); margin-bottom: 16px;"></i>
-          <h3 style="margin-bottom: 12px;">DÃ¼ÅŸÃ¼k RAM KullanÄ±mÄ±</h3>
+          <i class="fas fa-shield-alt fa-2x" style="color: #EAE2B7; margin-bottom: 16px;"></i>
+          <h3 style="margin-bottom: 12px;">Built-in Ad & Tracker Blocker</h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem;">
-            Chromium altyapÄ±sÄ±nÄ±n saÄŸladÄ±ÄŸÄ± gÃ¼venliÄŸi sunarken, bellek optimizasyonu sayesinde eski bilgisayarlarda dahi kusursuz Ã§alÄ±ÅŸÄ±r.
+            Blocks ads, trackers, and malicious scripts by default. Faster pages, more privacy, zero setup required.
           </p>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- How to Install Guide -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Kolay Kurulum</span>
-        <h2>NasÄ±l Kurulur?</h2>
-      </div>
-
-      <div class="terminal-card">
-        <div class="terminal-header">
-          <span class="terminal-dot"></span>
-          <span class="terminal-dot"></span>
-          <span class="terminal-dot"></span>
-          <span class="terminal-title">lowbrowser-setup-guide.sh</span>
+        <div class="glass-card">
+          <i class="fas fa-palette fa-2x" style="color: #84A98C; margin-bottom: 16px;"></i>
+          <h3 style="margin-bottom: 12px;">Customizable Themes</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            Switch between clean light, dark, and custom themes. Personalize your browsing experience fully.
+          </p>
         </div>
-        <div class="terminal-body">
-          <div class="terminal-line">
-            <span class="terminal-prompt">$</span>
-            <span class="terminal-input">echo "Lowbrowser Kurulum Rehberi"</span>
-          </div>
-          <div class="terminal-output">
-            1. YukarÄ±daki indirme baÄŸlantÄ±larÄ±ndan .exe dosyasÄ±nÄ± indirin.<br>
-            2. Ä°ndirilen Lowbrowser_Setup.exe dosyasÄ±na Ã§ift tÄ±klayarak Ã§alÄ±ÅŸtÄ±rÄ±n.<br>
-            3. Ekrana gelen adÄ±mlarÄ± (Ä°leri > Kur) takip ederek iÅŸlemi tamamlayÄ±n.<br>
-            4. MasaÃ¼stÃ¼nÃ¼ze gelen kÄ±sayoldan tarayÄ±cÄ±yÄ± baÅŸlatÄ±n!
-          </div>
-          <div class="terminal-line">
-            <span class="terminal-prompt">$</span>
-            <span class="terminal-input">echo "TaÅŸÄ±nabilir (Portable) SÃ¼rÃ¼m"</span>
-          </div>
-          <div class="terminal-output">
-            1. Zip arÅŸivini bilgisayarÄ±nÄ±za indirin.<br>
-            2. ArÅŸivi istediÄŸiniz bir klasÃ¶re (Ã¶rn: MasaÃ¼stÃ¼) Ã§Ä±kartÄ±n.<br>
-            3. KlasÃ¶r iÃ§indeki Lowbrowser.exe dosyasÄ±nÄ± Ã§alÄ±ÅŸtÄ±rarak kurulumsuz kullanÄ±n!
-          </div>
+
+        <div class="glass-card">
+          <i class="fas fa-lock fa-2x" style="color: #EAE2B7; margin-bottom: 16px;"></i>
+          <h3 style="margin-bottom: 12px;">Privacy First</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            No telemetry, no data collection, no account required. Your browsing stays yours.
+          </p>
+        </div>
+
+        <div class="glass-card">
+          <i class="fas fa-box-open fa-2x" style="color: #84A98C; margin-bottom: 16px;"></i>
+          <h3 style="margin-bottom: 12px;">Portable Mode</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            Download the .zip version and run directly from a USB drive. No installation needed.
+          </p>
         </div>
       </div>
     </div>
@@ -190,16 +168,21 @@
   <footer>
     <div class="container footer-container">
       <div class="footer-copy">
-        &copy; 2026 Billy. TÃ¼m HaklarÄ± SaklÄ±dÄ±r.
+        &copy; 2026 Billy. All rights reserved.
       </div>
       <div class="footer-socials">
-        <a href="https://github.com/billygitpages" class="btn-icon" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://discord.gg/invite" class="btn-icon" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+        <a href="https://github.com/billythestudent" class="btn-icon" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://discord.gg/invite" class="btn-icon" target="_blank" aria-label="Discord">
+          <i class="fab fa-discord"></i>
+        </a>
       </div>
     </div>
   </footer>
 
-  <!-- Custom Scripts -->
   <script src="main.js"></script>
+
 </body>
+
 </html>
