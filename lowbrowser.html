@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lowbrowser İndir | Ultra Hafif Web Tarayıcısı</title>
+  <meta name="description" content="Lowbrowser web tarayıcısını indirin. Minimum RAM ve CPU kullanımıyla Chromium tabanlı, hızlı, reklam engelleme özellikli tarayıcı.">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="container nav-container">
+      <a href="index.html" class="logo" id="nav-logo">
+        BILLY<span class="logo-dot"></span>
+      </a>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="lowbrowser.html" class="active">Lowbrowser</a></li>
+        <li><a href="multibot.html">Multibot</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Menüyü Aç" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Subpage Hero -->
+  <section class="subpage-hero">
+    <div class="container">
+      <span class="subpage-badge" style="background: rgba(0, 242, 254, 0.08); border: 1px solid rgba(0, 242, 254, 0.15); color: var(--accent-cyan);">
+        <i class="fas fa-rocket"></i> Versiyon 1.2.0 Stabil Çıktı
+      </span>
+      <h1 class="subpage-title">Lowbrowser</h1>
+      <p class="subpage-description">
+        Bilgisayarınızı yormayan, sistem kaynaklarını minimum seviyede kullanan, dahili reklam engelleyicili ultra hafif yeni nesil web tarayıcısı.
+      </p>
+    </div>
+  </section>
+
+  <!-- Download Action Box -->
+  <div class="container">
+    <div class="glass-card download-box">
+      <i class="fas fa-cloud-download-alt fa-3x" style="color: var(--accent-cyan); margin-bottom: 20px;"></i>
+      <h2 style="margin-bottom: 12px;">Tarayıcıyı İndirin</h2>
+      <p style="color: var(--text-secondary);">Windows 10 / 11 (64-bit) işletim sistemleriyle tam uyumludur.</p>
+      
+      <div class="download-options">
+        <div class="download-btn-wrapper">
+          <a href="https://github.com/billygitpages/lowbrowser/releases/latest/download/Lowbrowser_Setup.exe" class="btn btn-primary" style="width: 100%; max-width: 320px;" id="download-exe-link">
+            <i class="fab fa-windows"></i> Windows için İndir (.exe)
+          </a>
+        </div>
+        <div>
+          <a href="https://github.com/billygitpages/lowbrowser/archive/refs/heads/main.zip" class="btn btn-secondary" style="width: 100%; max-width: 320px;" id="download-zip-link">
+            <i class="fas fa-file-archive"></i> Taşınabilir Sürüm (.zip)
+          </a>
+        </div>
+      </div>
+      <p class="download-info-small">Dosya Boyutu: ~45 MB | Kurulumsuz (Portable) seçeneği mevcuttur.</p>
+    </div>
+  </div>
+
+  <!-- Browser Visual Mockup -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Arayüz Önizlemesi</span>
+        <h2>Tasarım ve Performans</h2>
+      </div>
+
+      <div class="browser-mockup">
+        <div class="browser-header">
+          <div class="browser-dots">
+            <span class="browser-dot red"></span>
+            <span class="browser-dot yellow"></span>
+            <span class="browser-dot green"></span>
+          </div>
+          <div class="browser-address">
+            <i class="fas fa-lock" style="margin-right: 8px; color: #10b981;"></i> lowbrowser://dashboard
+          </div>
+        </div>
+        <div class="browser-content">
+          <div class="browser-preview-ui">
+            <div class="browser-preview-logo">Lowbrowser</div>
+            <p style="color: var(--text-secondary); margin-bottom: 24px; font-size: 1.1rem;">Göz alıcı hız, minimalist tasarım.</p>
+            
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+              <div style="background: rgba(255,255,255,0.05); padding: 16px 24px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); min-width: 150px;">
+                <h4 style="color: var(--accent-cyan); font-size: 1.5rem; margin-bottom: 4px;">0.12sn</h4>
+                <p style="font-size: 0.8rem; color: var(--text-secondary);">Açılış Hızı</p>
+              </div>
+              <div style="background: rgba(255,255,255,0.05); padding: 16px 24px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); min-width: 150px;">
+                <h4 style="color: var(--accent-cyan); font-size: 1.5rem; margin-bottom: 4px;">62%</h4>
+                <p style="font-size: 0.8rem; color: var(--text-secondary);">Düşük RAM</p>
+              </div>
+              <div style="background: rgba(255,255,255,0.05); padding: 16px 24px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); min-width: 150px;">
+                <h4 style="color: var(--accent-cyan); font-size: 1.5rem; margin-bottom: 4px;">2,450+</h4>
+                <p style="font-size: 0.8rem; color: var(--text-secondary);">Engellenen Reklam</p>
+              </div>
+            </div>
+          </div>
+          <!-- Background effect representing grid / browser lines -->
+          <div style="position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px); background-size: 20px 20px; z-index: 1;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Features Grid -->
+  <section class="section" style="background: rgba(255, 255, 255, 0.01); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Teknik Özellikler</span>
+        <h2>Neden Lowbrowser?</h2>
+      </div>
+
+      <div class="features-grid">
+        <div class="glass-card">
+          <i class="fas fa-bolt fa-2x" style="color: var(--accent-cyan); margin-bottom: 16px;"></i>
+          <h3 style="margin-bottom: 12px;">Ultra Hızlı Başlangıç</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            Gereksiz eklentiler ve arka plan işlemleri barındırmaz. Tıkladığınız an açılır ve saniyeler içinde sörf yapmaya hazır hale gelir.
+          </p>
+        </div>
+
+        <div class="glass-card">
+          <i class="fas fa-shield-alt fa-2x" style="color: var(--accent-cyan); margin-bottom: 16px;"></i>
+          <h3 style="margin-bottom: 12px;">Dahili AdBlocker</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            Web sayfalarındaki reklamları, çerez onay pencerelerini ve takip piksellerini otomatik olarak temizleyerek kotanızı ve vaktinizi korur.
+          </p>
+        </div>
+
+        <div class="glass-card">
+          <i class="fas fa-microchip fa-2x" style="color: var(--accent-cyan); margin-bottom: 16px;"></i>
+          <h3 style="margin-bottom: 12px;">Düşük RAM Kullanımı</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">
+            Chromium altyapısının sağladığı güvenliği sunarken, bellek optimizasyonu sayesinde eski bilgisayarlarda dahi kusursuz çalışır.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Install Guide -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Kolay Kurulum</span>
+        <h2>Nasıl Kurulur?</h2>
+      </div>
+
+      <div class="terminal-card">
+        <div class="terminal-header">
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-dot"></span>
+          <span class="terminal-title">lowbrowser-setup-guide.sh</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-input">echo "Lowbrowser Kurulum Rehberi"</span>
+          </div>
+          <div class="terminal-output">
+            1. Yukarıdaki indirme bağlantılarından .exe dosyasını indirin.<br>
+            2. İndirilen Lowbrowser_Setup.exe dosyasına çift tıklayarak çalıştırın.<br>
+            3. Ekrana gelen adımları (İleri > Kur) takip ederek işlemi tamamlayın.<br>
+            4. Masaüstünüze gelen kısayoldan tarayıcıyı başlatın!
+          </div>
+          <div class="terminal-line">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-input">echo "Taşınabilir (Portable) Sürüm"</span>
+          </div>
+          <div class="terminal-output">
+            1. Zip arşivini bilgisayarınıza indirin.<br>
+            2. Arşivi istediğiniz bir klasöre (örn: Masaüstü) çıkartın.<br>
+            3. Klasör içindeki Lowbrowser.exe dosyasını çalıştırarak kurulumsuz kullanın!
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <div class="footer-copy">
+        &copy; 2026 Billy. Tüm Hakları Saklıdır.
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com/billygitpages" class="btn-icon" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://discord.gg/invite" class="btn-icon" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom Scripts -->
+  <script src="main.js"></script>
+</body>
+</html>
