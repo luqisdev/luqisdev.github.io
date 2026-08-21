@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-/* CSS Variables */
+/* CSS Variables - Nature Theme (Earthy Forest & Sage) */
 :root {
-  --bg-color: #080b11;
-  --card-bg: rgba(13, 19, 33, 0.45);
-  --card-border: rgba(255, 255, 255, 0.06);
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --accent-cyan: #00f2fe;
-  --accent-purple: #9d4edd;
-  --accent-blue: #3b82f6;
-  --gradient-primary: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 100%);
-  --gradient-dark: linear-gradient(180deg, #0b111e 0%, #05070a 100%);
-  --glow-shadow: 0 0 20px rgba(0, 242, 254, 0.15);
-  --glow-shadow-purple: 0 0 20px rgba(157, 78, 221, 0.15);
-  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --bg-color: #0a0f0d;
+  --card-bg: rgba(18, 27, 23, 0.65);
+  --card-border: rgba(255, 255, 255, 0.05);
+  --text-primary: #e6ece8;
+  --text-secondary: #90a097;
+  --accent-cyan: #7ca990; /* Sage Green */
+  --accent-purple: #cfc2b2; /* Earth Sand / Beige */
+  --accent-blue: #486e56; /* Leaf Green */
+  --gradient-primary: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+  --gradient-dark: linear-gradient(180deg, #101815 0%, #060a08 100%);
+  --glow-shadow: 0 10px 30px rgba(124, 169, 144, 0.08);
+  --glow-shadow-purple: 0 10px 30px rgba(207, 194, 178, 0.08);
+  --transition-smooth: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Outfit', sans-serif;
 }
@@ -33,8 +33,8 @@ html {
 body {
   background-color: var(--bg-color);
   background-image: 
-    radial-gradient(at 0% 0%, rgba(0, 242, 254, 0.05) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(157, 78, 221, 0.05) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(124, 169, 144, 0.06) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(72, 110, 86, 0.06) 0px, transparent 50%);
   color: var(--text-primary);
   font-family: var(--font-body);
   line-height: 1.6;
@@ -48,7 +48,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 a {
@@ -81,11 +81,11 @@ header {
 }
 
 header.scrolled {
-  background: rgba(8, 11, 17, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(10, 15, 13, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--card-border);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
 }
 
 .nav-container {
@@ -112,7 +112,7 @@ header.scrolled {
   height: 8px;
   background: var(--accent-cyan);
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--accent-cyan);
+  box-shadow: 0 2px 10px rgba(124, 169, 144, 0.3);
 }
 
 .nav-links {
@@ -141,7 +141,7 @@ header.scrolled {
   left: 0;
   width: 0;
   height: 2px;
-  background: var(--gradient-primary);
+  background: var(--accent-cyan);
   transition: var(--transition-smooth);
 }
 
@@ -159,14 +159,14 @@ header.scrolled {
   cursor: pointer;
 }
 
-/* Buttons */
+/* Buttons (Matte Natural Textures) */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 12px 28px;
-  border-radius: 50px;
+  border-radius: 12px; /* Less round, more modern geometric */
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
@@ -176,36 +176,36 @@ header.scrolled {
 
 .btn-primary {
   background: var(--gradient-primary);
-  color: #080b11;
-  box-shadow: var(--glow-shadow);
+  color: #0a0f0d;
   border: none;
+  box-shadow: var(--glow-shadow);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 25px rgba(0, 242, 254, 0.4);
+  box-shadow: 0 10px 25px rgba(124, 169, 144, 0.2);
 }
 
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
   color: var(--text-primary);
   border: 1px solid var(--card-border);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.15);
   transform: translateY(-2px);
 }
 
 .btn-icon {
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+  border-radius: 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--card-border);
   color: var(--text-secondary);
   transition: var(--transition-smooth);
@@ -213,26 +213,27 @@ header.scrolled {
 
 .btn-icon:hover {
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
   border-color: var(--accent-cyan);
-  box-shadow: var(--glow-shadow);
   transform: translateY(-2px);
 }
 
-/* Glassmorphism Cards */
+/* Organic Nature Cards */
 .glass-card {
   background: var(--card-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--card-border);
-  border-radius: 20px;
+  border-radius: 16px;
   padding: 32px;
   transition: var(--transition-smooth);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .glass-card:hover {
-  border-color: rgba(255, 255, 255, 0.12);
-  transform: translateY(-4px);
+  border-color: rgba(124, 169, 144, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 /* Hero Section */
@@ -260,8 +261,8 @@ header.scrolled {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 242, 254, 0.08);
-  border: 1px solid rgba(0, 242, 254, 0.15);
+  background: rgba(124, 169, 144, 0.06);
+  border: 1px solid rgba(124, 169, 144, 0.12);
   color: var(--accent-cyan);
   padding: 6px 16px;
   border-radius: 30px;
@@ -276,19 +277,14 @@ header.scrolled {
   height: 6px;
   background-color: var(--accent-cyan);
   border-radius: 50%;
-  animation: ping 1.5s infinite;
-}
-
-@keyframes ping {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.8); opacity: 0; }
-  100% { transform: scale(1); opacity: 0; }
+  opacity: 0.8;
 }
 
 .hero-title {
   font-size: 4rem;
   line-height: 1.1;
   margin-bottom: 24px;
+  color: var(--text-primary);
 }
 
 .hero-title span {
@@ -309,7 +305,7 @@ header.scrolled {
   flex-wrap: wrap;
 }
 
-/* Floating Art / Visual Representation in Hero */
+/* Nature Inspired Visuals in Hero (Clean and organic, no glowing neon rings) */
 .hero-visual {
   position: relative;
   display: flex;
@@ -320,36 +316,35 @@ header.scrolled {
 .hero-circle {
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle, rgba(0, 242, 254, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(124, 169, 144, 0.08) 0%, transparent 70%);
   border-radius: 50%;
   position: relative;
-  animation: float 6s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
 }
 
 .hero-circle::before {
   content: '';
   position: absolute;
-  inset: 20px;
-  border: 1px dashed rgba(255, 255, 255, 0.1);
+  inset: 30px;
+  border: 1px solid rgba(124, 169, 144, 0.08);
   border-radius: 50%;
-  animation: spin 20s linear infinite;
+  animation: spin 30s linear infinite;
 }
 
 .hero-circle::after {
   content: '';
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 12px;
+  height: 12px;
   background: var(--accent-purple);
   border-radius: 50%;
-  top: 15%;
-  right: 15%;
-  box-shadow: var(--glow-shadow-purple);
+  top: 20%;
+  right: 20%;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  50% { transform: translateY(-10px); }
 }
 
 @keyframes spin {
@@ -434,19 +429,19 @@ header.scrolled {
   font-size: 0.8rem;
   font-weight: 600;
   padding: 4px 12px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--card-border);
 }
 
 .project-tag.lowbrowser {
   color: var(--accent-cyan);
-  background: rgba(0, 242, 254, 0.06);
+  background: rgba(124, 169, 144, 0.05);
 }
 
 .project-tag.multibot {
   color: var(--accent-purple);
-  background: rgba(157, 78, 221, 0.06);
+  background: rgba(207, 194, 178, 0.05);
 }
 
 .project-card h3 {
@@ -515,7 +510,7 @@ header.scrolled {
 }
 
 .skill-tag {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--card-border);
   padding: 8px 16px;
   border-radius: 8px;
@@ -525,7 +520,7 @@ header.scrolled {
 }
 
 .skill-tag:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.05);
   border-color: var(--accent-cyan);
   transform: translateY(-2px);
 }
@@ -552,8 +547,8 @@ header.scrolled {
 .contact-icon {
   width: 56px;
   height: 56px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--card-border);
   display: flex;
   align-items: center;
@@ -579,7 +574,7 @@ footer {
   margin-top: auto;
   border-top: 1px solid var(--card-border);
   padding: 40px 0;
-  background: #05070a;
+  background: #060a08;
 }
 
 .footer-container {
@@ -656,20 +651,20 @@ footer {
   color: var(--text-secondary);
 }
 
-/* Browser Window Mockup */
+/* Browser Window Mockup (Forest-green accents instead of neon cyan/purple) */
 .browser-mockup {
   border-radius: 12px;
   border: 1px solid var(--card-border);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
   overflow: hidden;
-  background: #0d1321;
+  background: #0f1814;
   margin: 40px auto 80px;
   max-width: 1000px;
 }
 
 .browser-header {
   height: 48px;
-  background: #0a0e1a;
+  background: #0a0f0c;
   border-bottom: 1px solid var(--card-border);
   display: flex;
   align-items: center;
@@ -686,18 +681,19 @@ footer {
   width: 12px;
   height: 12px;
   border-radius: 50%;
+  opacity: 0.8;
 }
 
-.browser-dot.red { background-color: #ef4444; }
-.browser-dot.yellow { background-color: #f59e0b; }
-.browser-dot.green { background-color: #10b981; }
+.browser-dot.red { background-color: #6e8477; }
+.browser-dot.yellow { background-color: #a49685; }
+.browser-dot.green { background-color: #486e56; }
 
 .browser-address {
   flex-grow: 1;
   max-width: 600px;
   height: 28px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -712,7 +708,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+  background: linear-gradient(135deg, #111a16 0%, #060a08 100%);
   position: relative;
   overflow: hidden;
 }
@@ -734,10 +730,10 @@ footer {
 
 /* Command Console / Bot commands */
 .terminal-card {
-  background: #05070a;
+  background: #060a08;
   border-radius: 12px;
   border: 1px solid var(--card-border);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
   font-family: 'Space Grotesk', monospace;
   overflow: hidden;
   max-width: 800px;
@@ -746,7 +742,7 @@ footer {
 
 .terminal-header {
   height: 40px;
-  background: #0d111a;
+  background: #0c120f;
   border-bottom: 1px solid var(--card-border);
   display: flex;
   align-items: center;
@@ -758,7 +754,7 @@ footer {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .terminal-title {
@@ -769,7 +765,7 @@ footer {
 
 .terminal-body {
   padding: 24px;
-  color: #38bdf8;
+  color: #88a894; /* Soft Sage Green text instead of bright blue */
   font-size: 0.95rem;
   min-height: 250px;
   display: flex;
@@ -804,7 +800,7 @@ footer {
 .command-table th, .command-table td {
   padding: 12px 16px;
   text-align: left;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
 .command-table th {
@@ -865,7 +861,7 @@ footer {
   }
 
   .nav-links {
-    display: none; /* In a production app, we would make a responsive toggle. We will handle toggles in main.js */
+    display: none;
   }
 
   .nav-links.active {
@@ -875,8 +871,8 @@ footer {
     top: 80px;
     left: 0;
     width: 100%;
-    background: rgba(8, 11, 17, 0.95);
-    backdrop-filter: blur(12px);
+    background: rgba(10, 15, 13, 0.95);
+    backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--card-border);
     padding: 24px;
     gap: 16px;
