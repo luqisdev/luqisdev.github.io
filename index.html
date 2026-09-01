@@ -205,9 +205,9 @@
                 </div>
 
                 <div class="pt-4">
-                    <button onclick="copyEmail()" id="contactBtn" class="btn-neon">
+                    <a href="mailto:contact@luqis.live" id="contactBtn" class="btn-neon">
                         Contact Me
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Infinite Marquee Tech Stack -->
@@ -323,22 +323,7 @@
             });
         });
 
-        // Contact Button Email Copy functionality
-        function copyEmail() {
-            const email = "contact@luqis.live";
-            navigator.clipboard.writeText(email).then(() => {
-                const btn = document.getElementById('contactBtn');
-                const originalText = btn.textContent;
 
-                btn.textContent = "Email Copied!";
-                btn.style.boxShadow = "0 0 1rem #00e676";
-
-                setTimeout(() => {
-                    btn.textContent = "Contact Me";
-                    btn.style.boxShadow = "";
-                }, 2000);
-            });
-        }
     </script>
 </body>
 
