@@ -32,7 +32,7 @@
                         bg: '#1f242d',
                         surface: '#323946',
                         surfaceDark: '#242b36',
-                        accent: '#0ef',
+                        accent: '#00e676',
                         textMain: '#ffffff',
                         textMuted: '#e2e8f0'
                     },
@@ -68,12 +68,12 @@
                 color: theme('colors.bg');
                 border-radius: 9999px;
                 font-weight: 600;
-                box-shadow: 0 0 1rem theme('colors.accent');
+                box-shadow: 0 0 0.5rem theme('colors.accent');
                 transition: all 0.3s ease;
                 letter-spacing: 0.05em;
             }
             .btn-neon:hover {
-                box-shadow: 0 0 2rem theme('colors.accent');
+                box-shadow: 0 0 1rem theme('colors.accent');
                 transform: scale(1.05);
             }
 
@@ -93,7 +93,7 @@
             .social-icon:hover {
                 background-color: theme('colors.accent');
                 color: theme('colors.bg');
-                box-shadow: 0 0 1rem theme('colors.accent');
+                box-shadow: 0 0 0.5rem theme('colors.accent');
                 transform: translateY(-3px);
             }
 
@@ -101,7 +101,7 @@
             .neon-container {
                 border: 2px solid theme('colors.accent');
                 border-radius: 1rem;
-                box-shadow: 0 0 1rem rgba(0, 238, 255, 0.4), inset 0 0 1rem rgba(0, 238, 255, 0.1);
+                box-shadow: 0 0 0.5rem rgba(0, 230, 118, 0.2), inset 0 0 0.5rem rgba(0, 230, 118, 0.05);
                 background-color: theme('colors.surfaceDark');
                 position: relative;
                 overflow: hidden;
@@ -128,7 +128,7 @@
             /* Cyan text highlight */
             .text-accent {
                 color: theme('colors.accent');
-                text-shadow: 0 0 10px rgba(0, 238, 255, 0.3);
+                text-shadow: 0 0 5px rgba(0, 230, 118, 0.2);
             }
 
             ::-webkit-scrollbar {
@@ -178,7 +178,7 @@
                 </div>
 
                 <p class="text-base md:text-lg text-textMuted leading-relaxed max-w-lg">
-                    I'm a 20-year-old Computer Programming student. I've been writing code since 2017, focusing on
+                    I'm a 20-year-old I've been writing code since 2017, focusing on
                     crafting robust backends and clean digital experiences.
                 </p>
 
@@ -234,7 +234,7 @@
             <!-- Right Column: Interactive Project Showcase -->
             <div class="relative w-full">
                 <!-- Decorative background glow -->
-                <div class="absolute inset-0 bg-accent/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
+                <div class="absolute inset-0 bg-accent/10 blur-[100px] rounded-full z-0 pointer-events-none"></div>
 
                 <div class="neon-container p-6 relative z-10 space-y-4">
                     <div class="flex items-center justify-between mb-4 pb-4 border-b border-surface">
@@ -291,11 +291,17 @@
                     </div>
 
                     <!-- More on GitHub -->
-                    <a href="https://github.com/luqisdev" target="_blank" class="project-card rounded-lg p-4 flex items-center justify-center gap-3 group border border-transparent hover:border-accent/30 cursor-pointer">
-                        <svg class="w-5 h-5 text-textMuted group-hover:text-accent transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                    <a href="https://github.com/luqisdev" target="_blank"
+                        class="project-card rounded-lg p-4 flex items-center justify-center gap-3 group border border-transparent hover:border-accent/30 cursor-pointer">
+                        <svg class="w-5 h-5 text-textMuted group-hover:text-accent transition-colors"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                clip-rule="evenodd" />
                         </svg>
-                        <span class="text-sm font-medium text-textMuted group-hover:text-accent transition-colors">Explore more on GitHub</span>
+                        <span
+                            class="text-sm font-medium text-textMuted group-hover:text-accent transition-colors">Explore
+                            more on GitHub</span>
                     </a>
 
                 </div>
@@ -325,7 +331,7 @@
                 const originalText = btn.textContent;
 
                 btn.textContent = "Email Copied!";
-                btn.style.boxShadow = "0 0 2rem #0ef";
+                btn.style.boxShadow = "0 0 1rem #00e676";
 
                 setTimeout(() => {
                     btn.textContent = "Contact Me";
