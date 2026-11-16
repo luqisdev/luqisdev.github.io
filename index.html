@@ -1,329 +1,1392 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome..</title>
+    <title>İbrahim — luqis.live</title>
+    <meta name="description"
+        content="İbrahim — 2017'den beri C++, Chromium, TypeScript ve Node.js ile sistemler ve sade dijital ürünler geliştiren yazılım geliştirici.">
 
-    <!-- Fonts -->
+    <!-- Fonts: Newsreader + IBM Plex Sans + IBM Plex Mono (Full Turkish support) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
         rel="stylesheet">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --bg: #15110E;
+            --surface: #1D1814;
+            --surface-raised: #251F1A;
+            --surface-recessed: #110E0B;
+            --ink: #EAE2D6;
+            --ink-soft: #B5A99B;
+            --ink-muted: #7F7468;
+            --rule: rgba(234, 226, 214, 0.10);
+            --rule-strong: rgba(234, 226, 214, 0.22);
+            --accent: #D48A55;
+            --accent-dim: rgba(212, 138, 85, 0.14);
+            --font-serif: 'Newsreader', Georgia, serif;
+            --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+        }
 
-    <!-- Typed.js for Typewriter Effect -->
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        bg: '#1f242d',
-                        surface: '#323946',
-                        surfaceDark: '#242b36',
-                        accent: '#00e676',
-                        textMain: '#ffffff',
-                        textMuted: '#e2e8f0'
-                    },
-                    animation: {
-                        'marquee': 'marquee 25s linear infinite',
-                    },
-                    keyframes: {
-                        marquee: {
-                            '0%': { transform: 'translateX(0%)' },
-                            '100%': { transform: 'translateX(-50%)' },
-                        }
-                    }
-                }
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--ink);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 6.5rem;
+            /* Subtle architectural drafting-mat dot grid */
+            background-image: radial-gradient(rgba(234, 226, 214, 0.065) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        ::selection {
+            background-color: var(--accent);
+            color: var(--bg);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+            color: inherit;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Top Status Bar */
+        .statusbar {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background-color: rgba(21, 17, 14, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--rule);
+            padding: 0.85rem 1.5rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--ink-muted);
+        }
+
+        .statusbar-inner {
+            max-width: 820px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .sb-left {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: var(--ink);
+        }
+
+        .sb-slash {
+            color: var(--ink-muted);
+        }
+
+        .sb-right {
+            display: flex;
+            align-items: center;
+            gap: 1.15rem;
+        }
+
+        .sb-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            color: var(--ink-soft);
+        }
+
+        .led {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            box-shadow: 0 0 6px rgba(212, 138, 85, 0.55);
+            animation: led-breathe 2.8s ease-in-out infinite;
+        }
+
+        @keyframes led-breathe {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.35; }
+        }
+
+        /* Main Workbench Container */
+        .workbench {
+            flex: 1;
+            width: 100%;
+            max-width: 820px;
+            margin: 2.75rem auto 0;
+            padding: 0 1.5rem;
+        }
+
+        /* Tactile Folio Window */
+        .folio {
+            background-color: var(--surface);
+            border: 1px solid var(--rule-strong);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+        }
+
+        .folio-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1.25rem;
+            background-color: var(--surface-recessed);
+            border-bottom: 1px solid var(--rule);
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--ink-muted);
+        }
+
+        .folio-path {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .folio-path span.active-crumb {
+            color: var(--accent);
+        }
+
+        .folio-hint {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .kbd {
+            display: inline-block;
+            padding: 0.1rem 0.35rem;
+            border: 1px solid var(--rule-strong);
+            border-radius: 3px;
+            font-size: 0.68rem;
+            color: var(--ink-soft);
+            background-color: var(--surface);
+        }
+
+        .folio-body {
+            padding: 2.5rem 2.25rem;
+        }
+
+        /* Views */
+        .view {
+            display: none;
+            animation: view-in 0.22s ease;
+        }
+
+        .view.is-active {
+            display: block;
+        }
+
+        @keyframes view-in {
+            from {
+                opacity: 0;
+                transform: translateY(4px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
-    </script>
 
-    <style type="text/tailwindcss">
-        @layer utilities {
-            body {
-                background-color: theme('colors.bg');
-                color: theme('colors.textMuted');
-                overflow-x: hidden;
+        /* View 1: Genel (Overview) */
+        .intro-tag {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.1rem;
+        }
+
+        .intro-title {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-size: clamp(2rem, 4.4vw, 3.1rem);
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            margin-bottom: 1.35rem;
+        }
+
+        .intro-title em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .intro-text {
+            font-size: 1rem;
+            color: var(--ink-soft);
+            max-width: 56ch;
+            line-height: 1.7;
+            margin-bottom: 2.25rem;
+        }
+
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quick-card {
+            background-color: var(--surface-recessed);
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            padding: 1.15rem 1.25rem;
+            text-align: left;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.45rem;
+        }
+
+        .quick-card:hover {
+            border-color: var(--accent);
+            background-color: var(--surface-raised);
+        }
+
+        .qc-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--ink-muted);
+        }
+
+        .qc-title {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            color: var(--ink);
+        }
+
+        .qc-desc {
+            font-size: 0.875rem;
+            color: var(--ink-soft);
+            line-height: 1.5;
+        }
+
+        .social-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--rule);
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--ink-muted);
+        }
+
+        .social-list {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .social-list a {
+            color: var(--ink-soft);
+            transition: color 0.18s ease;
+        }
+
+        .social-list a:hover {
+            color: var(--accent);
+        }
+
+        /* View 2: Projeler (Interactive Dossiers) */
+        .section-caption {
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            color: var(--ink-muted);
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .dossier-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .dossier {
+            background-color: var(--surface-recessed);
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+
+        .dossier.is-open {
+            border-color: var(--rule-strong);
+        }
+
+        .dossier-trigger {
+            width: 100%;
+            padding: 1.15rem 1.25rem;
+            display: grid;
+            grid-template-columns: 2.5rem 1fr auto;
+            gap: 1rem;
+            align-items: center;
+            text-align: left;
+            transition: background-color 0.2s ease;
+        }
+
+        .dossier-trigger:hover {
+            background-color: var(--surface-raised);
+        }
+
+        .dossier-num {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--ink-muted);
+        }
+
+        .dossier.is-open .dossier-num {
+            color: var(--accent);
+        }
+
+        .dossier-head {
+            display: flex;
+            align-items: baseline;
+            gap: 0.85rem;
+            flex-wrap: wrap;
+        }
+
+        .dossier-name {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: var(--ink);
+        }
+
+        .dossier-meta {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: var(--ink-muted);
+        }
+
+        .dossier-toggle {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--ink-muted);
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .dossier.is-open .dossier-toggle {
+            color: var(--accent);
+            transform: rotate(45deg);
+        }
+
+        .dossier-panel {
+            display: none;
+            padding: 0 1.25rem 1.35rem 4.75rem;
+            border-top: 1px solid var(--rule);
+            background-color: var(--surface-recessed);
+        }
+
+        .dossier.is-open .dossier-panel {
+            display: block;
+            animation: view-in 0.18s ease;
+        }
+
+        .dossier-desc {
+            font-size: 0.94rem;
+            color: var(--ink-soft);
+            margin: 1rem 0 1.15rem;
+            line-height: 1.65;
+        }
+
+        .spec-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+        }
+
+        .tag {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            padding: 0.22rem 0.55rem;
+            border: 1px solid var(--rule);
+            border-radius: 3px;
+            color: var(--ink-soft);
+            background-color: var(--surface);
+        }
+
+        .dossier-link {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--accent);
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+
+        .dossier-link:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        /* View 3: Yolculuk (Timeline & Inventory) */
+        .journey-split {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tl-row {
+            display: grid;
+            grid-template-columns: 5.5rem 1fr;
+            gap: 1rem;
+            padding: 0.95rem 0;
+            border-top: 1px solid var(--rule);
+        }
+
+        .tl-row:last-child {
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .tl-year {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--ink);
+            padding-top: 0.15rem;
+        }
+
+        .tl-year.now {
+            color: var(--accent);
+        }
+
+        .tl-body {
+            font-size: 0.92rem;
+            color: var(--ink-soft);
+            line-height: 1.55;
+        }
+
+        .tl-body strong {
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        .inventory {
+            background-color: var(--surface-recessed);
+            border: 1px solid var(--rule);
+            border-radius: 4px;
+            padding: 1.35rem;
+            height: fit-content;
+        }
+
+        .inv-title {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ink-muted);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .inv-group {
+            margin-bottom: 1rem;
+        }
+
+        .inv-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .inv-cat {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--ink-muted);
+            margin-bottom: 0.2rem;
+        }
+
+        .inv-val {
+            font-size: 0.9rem;
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        /* Floating Bottom Dock */
+        .dock-wrap {
+            position: fixed;
+            bottom: 1.25rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 50;
+            max-width: calc(100vw - 1.5rem);
+        }
+
+        .dock {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.4rem;
+            background-color: rgba(29, 24, 20, 0.9);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--rule-strong);
+            border-radius: 8px;
+            box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+            overflow-x: auto;
+        }
+
+        .dock-btn {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.5rem 0.85rem;
+            border-radius: 5px;
+            font-family: var(--font-mono);
+            font-size: 0.76rem;
+            color: var(--ink-soft);
+            white-space: nowrap;
+            transition: background-color 0.18s ease, color 0.18s ease;
+        }
+
+        .dock-btn:hover {
+            background-color: var(--surface-raised);
+            color: var(--ink);
+        }
+
+        .dock-btn.is-active {
+            background-color: var(--surface-raised);
+            color: var(--ink);
+        }
+
+        .dock-btn.is-active::after {
+            content: "";
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 2px;
+            border-radius: 2px;
+            background-color: var(--accent);
+        }
+
+        .dock-num {
+            font-size: 0.66rem;
+            color: var(--ink-muted);
+        }
+
+        .dock-btn.is-active .dock-num {
+            color: var(--accent);
+        }
+
+        .dock-sep {
+            width: 1px;
+            height: 18px;
+            background-color: var(--rule);
+            margin: 0 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .dock-email-state {
+            color: var(--accent);
+        }
+
+        /* View 4: İletişim */
+        .contact-lead {
+            font-size: 0.98rem;
+            color: var(--ink-soft);
+            max-width: 52ch;
+            margin-bottom: 1.75rem;
+            line-height: 1.65;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid var(--rule);
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.05rem 0.5rem;
+            border-bottom: 1px solid var(--rule);
+            transition: background-color 0.18s ease, padding-left 0.18s ease;
+        }
+
+        .contact-row:hover {
+            background-color: var(--surface-raised);
+            padding-left: 0.85rem;
+        }
+
+        .contact-left {
+            display: flex;
+            align-items: baseline;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-label {
+            font-family: var(--font-mono);
+            font-size: 0.74rem;
+            color: var(--ink-muted);
+            width: 5.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-value {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--ink);
+        }
+
+        .contact-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+        }
+
+        .contact-pill {
+            padding: 0.3rem 0.65rem;
+            border: 1px solid var(--rule-strong);
+            border-radius: 3px;
+            color: var(--ink-soft);
+            background-color: var(--surface-recessed);
+            transition: border-color 0.18s ease, color 0.18s ease;
+        }
+
+        .contact-pill:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .contact-pill.is-copied {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .contact-arrow {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            color: var(--ink-muted);
+            transition: color 0.18s ease;
+        }
+
+        .contact-row:hover .contact-arrow {
+            color: var(--accent);
+        }
+
+        @media (max-width: 720px) {
+            .workbench {
+                margin-top: 1.5rem;
             }
 
-            /* Neon Button */
-            .btn-neon {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                padding: 0.75rem 2rem;
-                background-color: theme('colors.accent');
-                color: theme('colors.bg');
-                border-radius: 9999px;
-                font-weight: 600;
-                box-shadow: 0 0 0.5rem theme('colors.accent');
-                transition: all 0.3s ease;
-                letter-spacing: 0.05em;
-            }
-            .btn-neon:hover {
-                box-shadow: 0 0 1rem theme('colors.accent');
-                transform: scale(1.05);
+            .folio-body {
+                padding: 1.75rem 1.25rem;
             }
 
-            /* Social Icons */
-            .social-icon {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 2.5rem;
-                height: 2.5rem;
-                border: 2px solid theme('colors.accent');
-                border-radius: 50%;
-                color: theme('colors.accent');
-                background-color: transparent;
-                transition: all 0.3s ease;
-            }
-            .social-icon:hover {
-                background-color: theme('colors.accent');
-                color: theme('colors.bg');
-                box-shadow: 0 0 0.5rem theme('colors.accent');
-                transform: translateY(-3px);
+            .folio-hint {
+                display: none;
             }
 
-            /* Glowing Project Container */
-            .neon-container {
-                border: 2px solid theme('colors.accent');
-                border-radius: 1rem;
-                box-shadow: 0 0 0.5rem rgba(0, 230, 118, 0.2), inset 0 0 0.5rem rgba(0, 230, 118, 0.05);
-                background-color: theme('colors.surfaceDark');
-                position: relative;
-                overflow: hidden;
-            }
-            
-            /* Mini Project Card inside Container */
-            .project-card {
-                background-color: theme('colors.surface');
-                border-left: 3px solid transparent;
-                transition: all 0.3s ease;
-            }
-            .project-card:hover {
-                border-left-color: theme('colors.accent');
-                background-color: rgba(50, 57, 70, 0.8);
-                transform: translateX(4px);
+            .quick-grid,
+            .journey-split {
+                grid-template-columns: 1fr;
             }
 
-            /* Ticker Mask */
-            .ticker-mask {
-                mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-                -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-            }
-            
-            /* Cyan text highlight */
-            .text-accent {
-                color: theme('colors.accent');
-                text-shadow: 0 0 5px rgba(0, 230, 118, 0.2);
+            .dossier-panel {
+                padding: 0 1.25rem 1.25rem;
             }
 
-            ::-webkit-scrollbar {
-                width: 8px;
-            }
-            ::-webkit-scrollbar-track {
-                background: theme('colors.bg'); 
-            }
-            ::-webkit-scrollbar-thumb {
-                background: theme('colors.surface'); 
-                border-radius: 4px;
-            }
-            ::-webkit-scrollbar-thumb:hover {
-                background: theme('colors.accent'); 
+            .tl-row {
+                grid-template-columns: 1fr;
+                gap: 0.25rem;
             }
         }
     </style>
 </head>
 
-<body class="antialiased min-h-screen flex flex-col selection:bg-accent selection:text-bg">
-
-    <!-- Navbar -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-bg/90 backdrop-blur-md border-b border-surface">
-        <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
-            <a href="#" class="text-2xl font-bold text-textMain tracking-wide">
-                luqis<span class="text-accent">.</span>live
-            </a>
-
-
+<body>
+    <!-- Top Status Strip -->
+    <header class="statusbar">
+        <div class="statusbar-inner">
+            <div class="sb-left">
+                <span>luqis.live</span>
+                <span class="sb-slash">/</span>
+                <span>İbrahim</span>
+            </div>
+            <div class="sb-right">
+                <span class="sb-status">
+                    <span class="led" aria-hidden="true"></span>
+                    <span>Müsait</span>
+                </span>
+                <span id="ist-clock">IST · --:--:--</span>
+            </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow pt-28 pb-12 flex items-center">
-        <div class="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <!-- Main Tactile Workbench -->
+    <main class="workbench">
+        <section class="folio" aria-label="Çalışma Masası">
+            <!-- Folio Top Bar -->
+            <div class="folio-bar">
+                <div class="folio-path">
+                    <span>~/ibrahim</span>
+                    <span>/</span>
+                    <span class="active-crumb" id="activeCrumb">genel.md</span>
+                </div>
+                <div class="folio-hint">
+                    <span>Sekmeler:</span>
+                    <span class="kbd">1</span>
+                    <span class="kbd">2</span>
+                    <span class="kbd">3</span>
+                    <span class="kbd">4</span>
+                </div>
+            </div>
 
-            <!-- Left Column: Bio & Marquee -->
-            <div class="space-y-8 relative z-10">
-                <div class="space-y-4">
-                    <h2 class="text-2xl md:text-3xl font-semibold text-textMain">Hello, It's Me</h2>
-                    <h1 class="text-5xl md:text-7xl font-bold text-textMain tracking-tight">
-                        İbrahim
+            <div class="folio-body">
+                <!-- VIEW 1: GENEL -->
+                <div class="view is-active" id="view-genel" data-crumb="genel.md">
+                    <div class="intro-tag">Yazılım Geliştirici · İstanbul</div>
+                    <h1 class="intro-title">
+                        Sistemler, tarayıcılar ve <em>sade</em> dijital ürünler inşa ediyorum.
                     </h1>
-                    <h3 class="text-xl md:text-2xl font-semibold text-textMain">
-                        And I'm a <span id="typed-text" class="text-accent"></span>
-                    </h3>
-                </div>
+                    <p class="intro-text">
+                        Ben İbrahim (20). 2017'den beri kod yazıyorum; odağımda yüksek performanslı C++
+                        altyapıları, Chromium tabanlı sistemler ve gereksiz karmaşadan arınmış web arayüzleri var.
+                    </p>
 
-                <p class="text-base md:text-lg text-textMuted leading-relaxed max-w-lg">
-                    I'm a 20-year-old developer. I've been writing code since 2017, focusing on
-                    crafting robust backends and clean digital experiences.
-                </p>
-
-                <div class="flex items-center gap-4 pt-2">
-                    <a href="https://github.com/luqisdev" target="_blank" class="social-icon">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd"
-                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </a>
-                    <a href="https://x.com/luqisdev" target="_blank" class="social-icon">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.008 5.968H5.078z" />
-                        </svg>
-                    </a>
-                    <a href="https://discord.com/users/1190947185353838616" target="_blank" class="social-icon">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z" />
-                        </svg>
-                    </a>
-                </div>
-
-                <div class="pt-4">
-                    <a href="mailto:contact@luqis.live" id="contactBtn" class="btn-neon">
-                        Contact Me
-                    </a>
-                </div>
-
-                <!-- Infinite Marquee Tech Stack -->
-                <div class="pt-8 w-full max-w-md">
-                    <div class="ticker-mask overflow-hidden w-full py-2">
-                        <!-- Double content for seamless looping -->
-                        <div
-                            class="flex items-center w-[200%] animate-marquee font-mono text-sm text-accent opacity-80">
-                            <!-- Block 1 -->
-                            <div class="flex items-center justify-around w-1/2">
-                                <span>C++</span> • <span>Node.js</span> • <span>TypeScript</span> • <span>React</span> •
-                                <span>Chromium</span> • <span>Git</span> • <span>Ruby</span> • <span>Kotlin</span> •
+                    <div class="quick-grid">
+                        <button type="button" class="quick-card" data-jump-project="kitebrowser">
+                            <div class="qc-top">
+                                <span>01 / TARAYICI</span>
+                                <span>C++ · Chromium →</span>
                             </div>
-                            <!-- Block 2 -->
-                            <div class="flex items-center justify-around w-1/2">
-                                <span>C++</span> • <span>Node.js</span> • <span>TypeScript</span> • <span>React</span> •
-                                <span>Chromium</span> • <span>Git</span> • <span>Ruby</span> • <span>Kotlin</span> •
+                            <div class="qc-title">Kite</div>
+                            <div class="qc-desc">Chromium çekirdeği üzerine inşa edilmiş, performans odaklı özel web tarayıcısı.</div>
+                        </button>
+
+                        <button type="button" class="quick-card" data-jump-view="projeler">
+                            <div class="qc-top">
+                                <span>02 / AÇIK KAYNAK</span>
+                                <span>GitHub →</span>
+                            </div>
+                            <div class="qc-title">Tüm Projeler</div>
+                            <div class="qc-desc">GitHub depolarımdan otomatik çekilen güncel çalışmalar ve README özetleri.</div>
+                        </button>
+                    </div>
+
+                    <div class="social-row">
+                        <span>2017'den beri aktif · contact@luqis.live</span>
+                        <div class="social-list">
+                            <a href="https://github.com/luqisdev" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                            <a href="https://x.com/luqisdev" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a>
+                            <a href="https://discord.com/users/1190947185353838616" target="_blank"
+                                rel="noopener noreferrer">Discord ↗</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VIEW 2: PROJELER -->
+                <div class="view" id="view-projeler" data-crumb="projeler/">
+                    <div class="section-caption">
+                        <span>SEÇİLİ PROJELER &amp; GITHUB DEPOLARI</span>
+                        <span id="repoStatus">GitHub'dan yükleniyor...</span>
+                    </div>
+
+                    <div class="dossier-list" id="dossierList">
+                        <!-- Dinamik olarak GitHub'dan doldurulur; hata durumunda yedek içerik gösterilir -->
+                    </div>
+                </div>
+
+                <!-- VIEW 3: HAKKIMDA -->
+                <div class="view" id="view-hakkimda" data-crumb="hakkimda.md">
+                    <div class="section-caption">
+                        <span>HAKKIMDA &amp; TEKNİK ENVANTER</span>
+                        <span>2017'den bugüne</span>
+                    </div>
+
+                    <div class="journey-split">
+                        <div class="timeline">
+                            <div class="tl-row">
+                                <span class="tl-year">2017</span>
+                                <p class="tl-body">
+                                    <strong>İlk satır kod.</strong> Web temelleri, küçük otomasyon betikleri ve
+                                    yazılım mantığıyla tanışma.
+                                </p>
+                            </div>
+                            <div class="tl-row">
+                                <span class="tl-year">2020</span>
+                                <p class="tl-body">
+                                    <strong>Backend &amp; servisler.</strong> Node.js ekosistemiyle gerçek zamanlı
+                                    uygulamalar ve topluluk ölçeğinde bot sistemleri.
+                                </p>
+                            </div>
+                            <div class="tl-row">
+                                <span class="tl-year">2023—24</span>
+                                <p class="tl-body">
+                                    <strong>C++ &amp; Chromium.</strong> Tarayıcı motoru özelleştirmeleri ve
+                                    <em>Kite</em> projesinin geliştirilmesi.
+                                </p>
+                            </div>
+                            <div class="tl-row">
+                                <span class="tl-year now">Bugün</span>
+                                <p class="tl-body">
+                                    <strong>Ürün mühendisliği.</strong> Sağlam arka plan servisleri, TypeScript/React
+                                    arayüzleri ve sade yazılımlar.
+                                </p>
                             </div>
                         </div>
+
+                        <aside class="inventory" aria-label="Teknik envanter">
+                            <div class="inv-title">Teknik Envanter</div>
+
+                            <div class="inv-group">
+                                <div class="inv-cat">Sistem &amp; Motor</div>
+                                <div class="inv-val">C++, Chromium</div>
+                            </div>
+
+                            <div class="inv-group">
+                                <div class="inv-cat">Web &amp; Backend</div>
+                                <div class="inv-val">TypeScript, Node.js, React</div>
+                            </div>
+
+                            <div class="inv-group">
+                                <div class="inv-cat">Diğer Araçlar</div>
+                                <div class="inv-val">Kotlin, Ruby, Git</div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+
+                <!-- VIEW 4: İLETİŞİM -->
+                <div class="view" id="view-iletisim" data-crumb="iletisim.md">
+                    <div class="section-caption">
+                        <span>İLETİŞİM &amp; BAĞLANTILAR</span>
+                        <span>İstanbul, TR</span>
+                    </div>
+
+                    <p class="contact-lead">
+                        Yeni projeler, sistem veya web geliştirme işbirlikleri ya da sadece tanışmak için
+                        aşağıdaki kanallardan bana doğrudan ulaşabilirsin.
+                    </p>
+
+                    <div class="contact-list">
+                        <div class="contact-row">
+                            <div class="contact-left">
+                                <span class="contact-label">E-POSTA</span>
+                                <span class="contact-value">contact@luqis.live</span>
+                            </div>
+                            <div class="contact-actions">
+                                <button type="button" class="contact-pill" id="copyEmailBtn"
+                                    data-email="contact@luqis.live">Kopyala</button>
+                                <a href="mailto:contact@luqis.live" class="contact-arrow">Mail Gönder ↗</a>
+                            </div>
+                        </div>
+
+                        <a href="https://github.com/luqisdev" target="_blank" rel="noopener noreferrer"
+                            class="contact-row">
+                            <div class="contact-left">
+                                <span class="contact-label">GITHUB</span>
+                                <span class="contact-value">@luqisdev</span>
+                            </div>
+                            <span class="contact-arrow">Profili Aç ↗</span>
+                        </a>
+
+                        <a href="https://x.com/luqisdev" target="_blank" rel="noopener noreferrer" class="contact-row">
+                            <div class="contact-left">
+                                <span class="contact-label">X / TWITTER</span>
+                                <span class="contact-value">@luqisdev</span>
+                            </div>
+                            <span class="contact-arrow">Takip Et ↗</span>
+                        </a>
+
+                        <a href="https://discord.com/users/1190947185353838616" target="_blank"
+                            rel="noopener noreferrer" class="contact-row">
+                            <div class="contact-left">
+                                <span class="contact-label">DISCORD</span>
+                                <span class="contact-value">luqis</span>
+                            </div>
+                            <span class="contact-arrow">Mesaj At ↗</span>
+                        </a>
                     </div>
                 </div>
             </div>
-
-            <!-- Right Column: Interactive Project Showcase -->
-            <div class="relative w-full">
-                <!-- Decorative background glow -->
-                <div class="absolute inset-0 bg-accent/10 blur-[100px] rounded-full z-0 pointer-events-none"></div>
-
-                <div class="neon-container p-6 relative z-10 space-y-4">
-                    <div class="flex items-center justify-between mb-4 pb-4 border-b border-surface">
-                        <h3 class="text-xl font-bold text-textMain">Project Showcase</h3>
-                        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                    </div>
-
-                    <!-- Chromium Browser -->
-                    <div class="project-card rounded-lg p-4 flex flex-col gap-3 group">
-                        <div class="flex justify-between items-start">
-                            <h4 class="text-lg font-semibold text-textMain group-hover:text-accent transition-colors">
-                                Kite</h4>
-                            <a href="https://github.com/luqisdev/kitebrowser" target="_blank"
-                                class="text-xs font-mono text-accent opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-                                View Code <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                    </path>
-                                </svg>
-                            </a>
-                        </div>
-                        <p class="text-sm text-textMuted">Custom web browser built on top of the Chromium project,
-                            optimized for performance.</p>
-                        <div class="flex flex-wrap gap-2 pt-1">
-                            <span
-                                class="text-xs font-mono px-2 py-1 rounded bg-bg text-accent border border-accent/20">C++</span>
-                            <span
-                                class="text-xs font-mono px-2 py-1 rounded bg-bg text-accent border border-accent/20">Chromium</span>
-                        </div>
-                    </div>
-
-                    <!-- Matı Bot -->
-                    <div class="project-card rounded-lg p-4 flex flex-col gap-3 group">
-                        <div class="flex justify-between items-start">
-                            <h4 class="text-lg font-semibold text-textMain group-hover:text-accent transition-colors">
-                                Mati Bot</h4>
-                            <a href="https://discord.com/oauth2/authorize?client_id=1216389829688950924" target="_blank"
-                                class="text-xs font-mono text-accent opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-                                Invite Bot <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
-                                    </path>
-                                </svg>
-                            </a>
-                        </div>
-                        <p class="text-sm text-textMuted">Versatile Discord bot for community management and seamless
-                            user engagement utilities.</p>
-                        <div class="flex flex-wrap gap-2 pt-1">
-                            <span
-                                class="text-xs font-mono px-2 py-1 rounded bg-bg text-accent border border-accent/20">Node.js</span>
-                            <span
-                                class="text-xs font-mono px-2 py-1 rounded bg-bg text-accent border border-accent/20">Discord.js</span>
-                        </div>
-                    </div>
-
-                    <!-- More on GitHub -->
-                    <a href="https://github.com/luqisdev" target="_blank"
-                        class="project-card rounded-lg p-4 flex items-center justify-center gap-3 group border border-transparent hover:border-accent/30 cursor-pointer">
-                        <svg class="w-5 h-5 text-textMuted group-hover:text-accent transition-colors"
-                            fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd"
-                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                clip-rule="evenodd" />
-                        </svg>
-                        <span
-                            class="text-sm font-medium text-textMuted group-hover:text-accent transition-colors">Explore
-                            more on GitHub</span>
-                    </a>
-
-                </div>
-            </div>
-
-        </div>
+        </section>
     </main>
 
+    <!-- Floating Bottom Dock -->
+    <nav class="dock-wrap" aria-label="Çalışma masası menüsü">
+        <div class="dock">
+            <button type="button" class="dock-btn is-active" data-view="genel">
+                <span class="dock-num">1</span>
+                <span>Genel</span>
+            </button>
+            <button type="button" class="dock-btn" data-view="projeler">
+                <span class="dock-num">2</span>
+                <span>Projeler</span>
+            </button>
+            <button type="button" class="dock-btn" data-view="hakkimda">
+                <span class="dock-num">3</span>
+                <span>Hakkımda</span>
+            </button>
+            <button type="button" class="dock-btn" data-view="iletisim">
+                <span class="dock-num">4</span>
+                <span>İletişim</span>
+            </button>
+        </div>
+    </nav>
+
     <script>
-        // Setup Typed.js
-        document.addEventListener('DOMContentLoaded', function () {
-            var typed = new Typed('#typed-text', {
-                strings: ['Software Developer', 'Full-Stack Developer', 'Student'],
-                typeSpeed: 60,
-                backSpeed: 40,
-                backDelay: 1500,
-                loop: true,
-                cursorChar: '|'
+        (function () {
+            // Live Istanbul Clock
+            const clockEl = document.getElementById('ist-clock');
+            function updateClock() {
+                try {
+                    const formatted = new Intl.DateTimeFormat('tr-TR', {
+                        timeZone: 'Europe/Istanbul',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit',
+                        hour12: false
+                    }).format(new Date());
+                    clockEl.textContent = 'IST · ' + formatted;
+                } catch (e) {
+                    clockEl.textContent = 'IST';
+                }
+            }
+            updateClock();
+            setInterval(updateClock, 1000);
+
+            // View Switching
+            const dockBtns = document.querySelectorAll('.dock-btn[data-view]');
+            const views = document.querySelectorAll('.view');
+            const crumbEl = document.getElementById('activeCrumb');
+
+            function switchView(name) {
+                dockBtns.forEach(function (btn) {
+                    btn.classList.toggle('is-active', btn.getAttribute('data-view') === name);
+                });
+                views.forEach(function (view) {
+                    const match = view.id === 'view-' + name;
+                    view.classList.toggle('is-active', match);
+                    if (match && crumbEl) {
+                        crumbEl.textContent = view.getAttribute('data-crumb') || name;
+                    }
+                });
+            }
+
+            dockBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    switchView(btn.getAttribute('data-view'));
+                });
             });
-        });
 
+            // =========================================================
+            // GitHub Projeleri & Otomatik README Çekme Ayarları
+            // =========================================================
+            const GITHUB_USER = 'luqisdev';
+            const EXCLUDED_REPOS = ['luqisdev', 'luqisdev.github.io', 'billygitpages'];
+            const EXCLUDE_FORKS = true;
+            const CACHE_TTL_MS = 20 * 60 * 1000; // 20 dakika önbellek
 
+            // İsteğe bağlı özel sabit projeler
+            const CUSTOM_PROJECTS = [];
+
+            // GitHub API erişilemezse gösterilecek yedek liste
+            const FALLBACK_PROJECTS = [
+                {
+                    key: 'kitebrowser',
+                    repoName: 'kitebrowser',
+                    branch: 'main',
+                    name: 'Kite',
+                    meta: 'C++ · Chromium',
+                    tags: ['C++', 'Chromium'],
+                    link: 'https://github.com/luqisdev/kitebrowser',
+                    linkLabel: "GitHub'da İncele ↗",
+                    fallbackDesc: 'Performans ve bellek verimliliği odağında, doğrudan Chromium çekirdeği üzerine inşa edilmiş özel web tarayıcısı.',
+                    isGitHub: true
+                },
+                ...CUSTOM_PROJECTS
+            ];
+
+            const dossierListEl = document.getElementById('dossierList');
+            const repoStatusEl = document.getElementById('repoStatus');
+            let renderedProjects = [];
+
+            function cleanReadmeMarkdown(md) {
+                if (!md) return '';
+                let text = md
+                    // Kod bloklarını temizle
+                    .replace(/```[\s\S]*?```/g, '')
+                    // HTML yorum ve etiketlerini temizle
+                    .replace(/<!--[\s\S]*?-->/g, '')
+                    .replace(/<[^>]+>/g, ' ')
+                    // Görsel / rozetleri temizle
+                    .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+                    // Markdown linklerini düz metne çevir
+                    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+                    // Başlık (#), alıntı (>) ve liste işaretlerini temizle
+                    .replace(/^\s{0,3}(?:#{1,6}\s+|>\s*|[-*_]{3,}\s*$)/gm, '')
+                    .replace(/[`*_~]/g, '');
+
+                const paragraphs = text
+                    .split(/\r?\n\s*\r?\n/)
+                    .map(function (p) { return p.replace(/\s+/g, ' ').trim(); })
+                    .filter(function (p) {
+                        return p.length > 24 && !/^https?:\/\//i.test(p);
+                    });
+
+                if (!paragraphs.length) return '';
+                let summary = paragraphs[0];
+                if (summary.length < 110 && paragraphs[1]) {
+                    summary += ' ' + paragraphs[1];
+                }
+                if (summary.length > 280) {
+                    summary = summary.slice(0, 277).trimEnd() + '...';
+                }
+                return summary;
+            }
+
+            async function fetchReadmeSummary(project) {
+                if (!project.isGitHub) return project.fallbackDesc;
+                const cacheKey = 'readme_cache_' + project.repoName;
+                try {
+                    const cached = sessionStorage.getItem(cacheKey);
+                    if (cached) {
+                        const parsed = JSON.parse(cached);
+                        if (Date.now() - parsed.ts < CACHE_TTL_MS && parsed.text) {
+                            return parsed.text;
+                        }
+                    }
+                } catch (e) { }
+
+                const branch = project.branch || 'main';
+                const url = 'https://raw.githubusercontent.com/' + GITHUB_USER + '/' +
+                    encodeURIComponent(project.repoName) + '/' + encodeURIComponent(branch) + '/README.md';
+
+                try {
+                    const res = await fetch(url);
+                    if (!res.ok) return project.fallbackDesc;
+                    const raw = await res.text();
+                    const cleaned = cleanReadmeMarkdown(raw);
+                    const finalDesc = cleaned || project.fallbackDesc;
+                    try {
+                        sessionStorage.setItem(cacheKey, JSON.stringify({ ts: Date.now(), text: finalDesc }));
+                    } catch (e) { }
+                    return finalDesc;
+                } catch (e) {
+                    return project.fallbackDesc;
+                }
+            }
+
+            function openDossier(targetKey) {
+                const items = dossierListEl.querySelectorAll('.dossier');
+                items.forEach(function (item) {
+                    const key = item.getAttribute('data-project');
+                    const isTarget = key === targetKey || (targetKey === 'kite' && key === 'kitebrowser');
+                    item.classList.toggle('is-open', isTarget);
+                    const trigger = item.querySelector('.dossier-trigger');
+                    if (trigger) trigger.setAttribute('aria-expanded', isTarget ? 'true' : 'false');
+
+                    if (isTarget && !item.dataset.readmeLoaded) {
+                        const proj = renderedProjects.find(function (p) { return p.key === key; });
+                        const descEl = item.querySelector('.dossier-desc');
+                        if (proj && descEl) {
+                            item.dataset.readmeLoaded = '1';
+                            fetchReadmeSummary(proj).then(function (txt) {
+                                descEl.textContent = txt;
+                            });
+                        }
+                    }
+                });
+            }
+
+            function renderDossiers(projects) {
+                renderedProjects = projects;
+                dossierListEl.innerHTML = '';
+
+                projects.forEach(function (proj, idx) {
+                    const isFirst = idx === 0;
+                    const article = document.createElement('article');
+                    article.className = 'dossier' + (isFirst ? ' is-open' : '');
+                    article.setAttribute('data-project', proj.key);
+
+                    const trigger = document.createElement('button');
+                    trigger.type = 'button';
+                    trigger.className = 'dossier-trigger';
+                    trigger.setAttribute('aria-expanded', isFirst ? 'true' : 'false');
+
+                    const num = document.createElement('span');
+                    num.className = 'dossier-num';
+                    num.textContent = String(idx + 1).padStart(2, '0');
+
+                    const head = document.createElement('div');
+                    head.className = 'dossier-head';
+
+                    const nameEl = document.createElement('span');
+                    nameEl.className = 'dossier-name';
+                    nameEl.textContent = proj.name;
+
+                    const metaEl = document.createElement('span');
+                    metaEl.className = 'dossier-meta';
+                    metaEl.textContent = proj.meta;
+
+                    head.appendChild(nameEl);
+                    head.appendChild(metaEl);
+
+                    const toggle = document.createElement('span');
+                    toggle.className = 'dossier-toggle';
+                    toggle.setAttribute('aria-hidden', 'true');
+                    toggle.textContent = '+';
+
+                    trigger.appendChild(num);
+                    trigger.appendChild(head);
+                    trigger.appendChild(toggle);
+
+                    const panel = document.createElement('div');
+                    panel.className = 'dossier-panel';
+
+                    const desc = document.createElement('p');
+                    desc.className = 'dossier-desc';
+                    desc.textContent = proj.isGitHub ? 'README yükleniyor...' : proj.fallbackDesc;
+
+                    const specRow = document.createElement('div');
+                    specRow.className = 'spec-row';
+
+                    const tagsWrap = document.createElement('div');
+                    tagsWrap.className = 'tags';
+                    (proj.tags || []).forEach(function (t) {
+                        const tagEl = document.createElement('span');
+                        tagEl.className = 'tag';
+                        tagEl.textContent = t;
+                        tagsWrap.appendChild(tagEl);
+                    });
+
+                    const linkEl = document.createElement('a');
+                    linkEl.className = 'dossier-link';
+                    linkEl.href = proj.link;
+                    linkEl.target = '_blank';
+                    linkEl.rel = 'noopener noreferrer';
+                    linkEl.textContent = proj.linkLabel || "GitHub'da İncele ↗";
+
+                    specRow.appendChild(tagsWrap);
+                    specRow.appendChild(linkEl);
+
+                    panel.appendChild(desc);
+                    panel.appendChild(specRow);
+
+                    article.appendChild(trigger);
+                    article.appendChild(panel);
+                    dossierListEl.appendChild(article);
+
+                    trigger.addEventListener('click', function () {
+                        const willOpen = !article.classList.contains('is-open');
+                        dossierListEl.querySelectorAll('.dossier').forEach(function (other) {
+                            other.classList.remove('is-open');
+                            const t = other.querySelector('.dossier-trigger');
+                            if (t) t.setAttribute('aria-expanded', 'false');
+                        });
+                        if (willOpen) {
+                            article.classList.add('is-open');
+                            trigger.setAttribute('aria-expanded', 'true');
+                            if (!article.dataset.readmeLoaded) {
+                                article.dataset.readmeLoaded = '1';
+                                fetchReadmeSummary(proj).then(function (txt) {
+                                    desc.textContent = txt;
+                                });
+                            }
+                        }
+                    });
+
+                    if (isFirst) {
+                        article.dataset.readmeLoaded = '1';
+                        fetchReadmeSummary(proj).then(function (txt) {
+                            desc.textContent = txt;
+                        });
+                    }
+                });
+            }
+
+            async function loadGitHubProjects() {
+                const excludedSet = new Set(EXCLUDED_REPOS.map(function (r) { return r.toLowerCase(); }));
+                const cacheKey = 'gh_repos_' + GITHUB_USER;
+
+                try {
+                    let repos = null;
+                    try {
+                        const cached = sessionStorage.getItem(cacheKey);
+                        if (cached) {
+                            const parsed = JSON.parse(cached);
+                            if (Date.now() - parsed.ts < CACHE_TTL_MS && Array.isArray(parsed.repos)) {
+                                repos = parsed.repos;
+                            }
+                        }
+                    } catch (e) { }
+
+                    if (!repos) {
+                        const res = await fetch('https://api.github.com/users/' + GITHUB_USER + '/repos?sort=updated&per_page=30');
+                        if (!res.ok) throw new Error('GitHub API ' + res.status);
+                        repos = await res.json();
+                        try {
+                            sessionStorage.setItem(cacheKey, JSON.stringify({ ts: Date.now(), repos: repos }));
+                        } catch (e) { }
+                    }
+
+                    const filtered = repos
+                        .filter(function (repo) {
+                            if (excludedSet.has(repo.name.toLowerCase())) return false;
+                            if (EXCLUDE_FORKS && repo.fork) return false;
+                            if (repo.archived) return false;
+                            return true;
+                        })
+                        .map(function (repo) {
+                            const year = repo.pushed_at ? new Date(repo.pushed_at).getFullYear() : '';
+                            const tags = [];
+                            if (repo.language) tags.push(repo.language);
+                            if (Array.isArray(repo.topics)) {
+                                repo.topics.slice(0, 3).forEach(function (tp) {
+                                    if (tags.indexOf(tp) === -1) tags.push(tp);
+                                });
+                            }
+                            if (!tags.length) tags.push('Açık Kaynak');
+
+                            return {
+                                key: repo.name.toLowerCase(),
+                                repoName: repo.name,
+                                branch: repo.default_branch || 'main',
+                                name: repo.name,
+                                meta: (repo.language ? repo.language + ' · ' : '') + (year || 'GitHub'),
+                                tags: tags,
+                                link: repo.html_url,
+                                linkLabel: "GitHub'da İncele ↗",
+                                fallbackDesc: repo.description || 'Bu depo için henüz açıklama eklenmemiş.',
+                                isGitHub: true
+                            };
+                        });
+
+                    const combined = filtered.concat(CUSTOM_PROJECTS);
+                    renderDossiers(combined);
+                    if (repoStatusEl) {
+                        repoStatusEl.textContent = combined.length + ' proje · README otomatik';
+                    }
+                } catch (err) {
+                    renderDossiers(FALLBACK_PROJECTS);
+                    if (repoStatusEl) {
+                        repoStatusEl.textContent = 'Çevrimdışı önbellek';
+                    }
+                }
+            }
+
+            loadGitHubProjects();
+
+            // Quick cards from Overview -> jump to Projeler & open specific project
+            document.querySelectorAll('[data-jump-project]').forEach(function (card) {
+                card.addEventListener('click', function () {
+                    const key = card.getAttribute('data-jump-project');
+                    switchView('projeler');
+                    openDossier(key);
+                });
+            });
+
+            document.querySelectorAll('[data-jump-view]').forEach(function (card) {
+                card.addEventListener('click', function () {
+                    switchView(card.getAttribute('data-jump-view'));
+                });
+            });
+
+            // Copy Email (İletişim sekmesi)
+            const emailBtn = document.getElementById('copyEmailBtn');
+            let copyTimer;
+
+            function copyEmail() {
+                if (!emailBtn) return;
+                const email = emailBtn.getAttribute('data-email');
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(email).then(showCopied, fallback);
+                } else {
+                    fallback();
+                }
+
+                function showCopied() {
+                    emailBtn.textContent = 'Kopyalandı ✓';
+                    emailBtn.classList.add('is-copied');
+                    clearTimeout(copyTimer);
+                    copyTimer = setTimeout(function () {
+                        emailBtn.textContent = 'Kopyala';
+                        emailBtn.classList.remove('is-copied');
+                    }, 2000);
+                }
+
+                function fallback() {
+                    window.location.href = 'mailto:' + email;
+                }
+            }
+
+            if (emailBtn) {
+                emailBtn.addEventListener('click', copyEmail);
+            }
+
+            // Keyboard Shortcuts (1, 2, 3, 4)
+            document.addEventListener('keydown', function (e) {
+                if (e.metaKey || e.ctrlKey || e.altKey) return;
+                const tag = (e.target && e.target.tagName) || '';
+                if (tag === 'INPUT' || tag === 'TEXTAREA') return;
+
+                if (e.key === '1') switchView('genel');
+                else if (e.key === '2') switchView('projeler');
+                else if (e.key === '3') switchView('hakkimda');
+                else if (e.key === '4') switchView('iletisim');
+            });
+        })();
     </script>
 </body>
 
